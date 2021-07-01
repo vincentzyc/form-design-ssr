@@ -5,7 +5,7 @@
       <span :class="{ done: todo.done }">{{ todo.text }}</span>
     </li>
     <li>
-      <input @keyup.enter="addTodo" placeholder="What needs to be done?" />
+      <input @keyup.enter="addTodo" placeholder="What needs to be done?" id="inputa"/>
     </li>
   </ul>
 </template>

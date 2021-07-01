@@ -5,6 +5,7 @@
       <TestDemo />
       <h1 class="title">Welcome to the Vant + Nuxt.js template</h1>
       <Todos />
+      <p>your ip : {{ip}}</p>
       <div class="links">
         <van-button type="primary" url="https://nuxtjs.org/">Documentation</van-button>
         <van-button url="https://github.com/nuxt/nuxt.js">GitHub</van-button>
@@ -46,6 +47,7 @@ export default {
   },
   data() {
     return {
+      ip: '',
       showList: false,
       chosenCoupon: -1,
       coupons: [coupon],
@@ -61,6 +63,13 @@ export default {
       console.log(code);
       this.coupons.push(coupon);
     },
+    async fetchSomething() {
+      const ip = await this.$axios.$get('http://icanhazip.com')
+      this.ip = ip
+    }
+  },
+  created() {
+    this.fetchSomething()
   }
 }
 </script>
