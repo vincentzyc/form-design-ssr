@@ -1,9 +1,12 @@
 export default {
+  server: {
+    port: 3060 // default: 3000
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'nuxt-ssr',
+    title: 'form-design-ssr',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'zh'
     },
     meta: [
       { charset: 'utf-8' },

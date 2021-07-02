@@ -1,4 +1,11 @@
-# nuxt-ssr
+# form-design-ssr
+
+### 提示
+先通过系统生成页面
+
+拖拽式生成此项目页面的后台系统 —— form-design
+
+See [form-design](https://github.com/vincentzyc/form-design).
 
 ## Build Setup
 

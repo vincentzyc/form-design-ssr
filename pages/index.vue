@@ -1,11 +1,11 @@
 <template>
   <div class="container">
     <div>
+      <p>your ip : {{ip}}</p>
       <NuxtLogo />
       <TestDemo />
       <h1 class="title">Welcome to the Vant + Nuxt.js template</h1>
       <Todos />
-      <p>your ip : {{ip}}</p>
       <div class="links">
         <van-button type="primary" url="https://nuxtjs.org/">Documentation</van-button>
         <van-button url="https://github.com/nuxt/nuxt.js">GitHub</van-button>
