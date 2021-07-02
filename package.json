@@ -1,29 +1,31 @@
 {
-  "name": "nuxt-ssr",
-  "version": "1.0.0",
+  "name": "test-ssr-vue",
   "private": true,
+  "version": "1.0.0",
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate",
-    "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
-    "lint": "npm run lint:js"
+    "dev": "node server",
+    "build": "yarn build:client && yarn build:server",
+    "build:noExternal": "yarn build:client && yarn build:server:noExternal",
+    "build:client": "vite build --ssrManifest --outDir dist/client",
+    "build:server": "vite build --ssr src/entry-server.js --outDir dist/server",
+    "build:server:noExternal": "vite build --config vite.config.noexternal.js --ssr src/entry-server.js --outDir dist/server",
+    "generate": "vite build --ssrManifest --outDir dist/static && yarn build:server && node prerender",
+    "serve": "cross-env NODE_ENV=production node server",
+    "debug": "node --inspect-brk server"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.13.6",
-    "core-js": "^3.15.1",
-    "nuxt": "^2.15.7",
-    "vant": "^2.12.22"
+    "vue": "^3.0.8",
+    "vue-router": "^4.0.3"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.14.7",
-    "@nuxt/types": "^2.15.7",
-    "@nuxt/typescript-build": "^2.1.0",
-    "@nuxtjs/eslint-config-typescript": "^6.0.1",
-    "@nuxtjs/eslint-module": "^3.0.2",
-    "eslint": "^7.29.0",
-    "eslint-plugin-nuxt": "^2.0.0",
-    "eslint-plugin-vue": "^7.12.1"
+    "@vitejs/plugin-vue": "^1.0.0",
+    "@vitejs/plugin-vue-jsx": "^1.1.2",
+    "@vue/compiler-sfc": "^3.0.8",
+    "@vue/server-renderer": "^3.0.6",
+    "dep-import-type": "file:./dep-import-type",
+    "compression": "^1.7.4",
+    "cross-env": "^7.0.3",
+    "express": "^4.17.1",
+    "serve-static": "^1.14.1"
   }
 }
