@@ -1,1 +1,3 @@
-export interface Foo {}
+export interface Foo {
+  haha: string
+}
