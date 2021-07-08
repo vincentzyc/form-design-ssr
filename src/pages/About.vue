@@ -7,7 +7,7 @@ import Axios from '../plugins/axios'
 export default {
   async setup() {
     const handClick = () => {
-      Axios.post('http://test-card.liulianglf.cn/service/jimPenn/page_id', { pid: "10086" }).then(res => {
+      Axios.get('https://biz.trace.ickd.cn/auto/12312312').then(res => {
         console.log(res);
       })
     }
