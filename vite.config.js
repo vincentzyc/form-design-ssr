@@ -1,3 +1,5 @@
+import path from "path"
+
 const vuePlugin = require('@vitejs/plugin-vue')
 const vueJsx = require('@vitejs/plugin-vue-jsx')
 
@@ -22,6 +24,11 @@ module.exports = {
       }
     }
   ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src')
+    }
+  },
   build: {
     minify: false
   }
