@@ -1,10 +1,11 @@
 <template>
-  <h1 @click="handClick()">{{ msg }}</h1>
+  <h1>{{ msg }}</h1>
+  <button @click="handClick()">查快递</button>
   <p>{{getres}}</p>
 </template>
 
 <script>
-import Axios from '../plugins/axios'
+import Axios from '@/plugins/axios'
 import { ref } from 'vue'
 export default {
   async setup() {
