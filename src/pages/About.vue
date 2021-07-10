@@ -16,7 +16,6 @@ export default {
     const kdnum = ref('')
     const handClick = () => {
       const num = kdnum.value || '1201594647434'
-      console.log(num);
       Axios.get('https://biz.trace.ickd.cn/auto/' + num).then(res => {
         getres.value = res.data
       })
