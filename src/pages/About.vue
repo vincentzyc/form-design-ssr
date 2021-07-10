@@ -1,6 +1,9 @@
 <template>
   <h1>{{ msg }}</h1>
-  <button @click="handClick()">查快递</button>
+  <div>
+    <input type="text" v-model="kdnum" />
+    <button @click="handClick()">查快递</button>
+  </div>
   <p>{{getres}}</p>
 </template>
 
@@ -9,15 +12,19 @@ import Axios from '@/plugins/axios'
 import { ref } from 'vue'
 export default {
   async setup() {
-    let getres = ref('')
+    const getres = ref('')
+    const kdnum = ref('')
     const handClick = () => {
-      Axios.get('https://biz.trace.ickd.cn/auto/1201594647434').then(res => {
+      const num = kdnum.value || '1201594647434'
+      console.log(num);
+      Axios.get('https://biz.trace.ickd.cn/auto/' + num).then(res => {
         getres.value = res.data
       })
     }
     return {
       handClick,
       getres,
+      kdnum,
       msg: 'About'
     }
   }
