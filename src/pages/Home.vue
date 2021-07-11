@@ -25,8 +25,7 @@ const state = reactive({ count: 0 })
 </script>
 
 <style scoped>
-h1,
-a {
+.inter {
   color: green;
 }
 </style>
