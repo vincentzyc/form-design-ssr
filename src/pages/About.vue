@@ -2,7 +2,7 @@
   <h1>{{ msg }}</h1>
   <div>
     <input type="text" v-model="kdnum" />
-    <button @click="handClick()">查快递</button>
+    <Button @click="handClick()" type="primary">查快递</Button>
   </div>
   <p>{{getres}}</p>
 </template>
@@ -10,7 +10,12 @@
 <script>
 import Axios from '@/plugins/axios'
 import { ref } from 'vue'
+import { Button } from 'vant';
+
 export default {
+  components: {
+    Button
+  },
   async setup() {
     const getres = ref('')
     const kdnum = ref('')
