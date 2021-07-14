@@ -1,6 +1,6 @@
 import App from './App.vue'
 import { createSSRApp } from 'vue'
-import { createRouter } from './router'
+// import { createRouter } from './router'
 import { store, key } from './store'
 
 // SSR requires a fresh app instance per request, therefore we export a function
@@ -8,7 +8,9 @@ import { store, key } from './store'
 // fresh store here.
 export function createApp() {
   const app = createSSRApp(App)
-  const router = createRouter()
-  app.use(store, key).use(router)
-  return { app, router }
+  // const router = createRouter()
+  app.use(store, key)
+  // app.use(store, key).use(router)
+  return { app }
+  // return { app, router }
 }
