@@ -2,11 +2,12 @@ import { createApp } from './main'
 import { renderToString } from '@vue/server-renderer'
 
 export async function render(url, manifest) {
-  const { app, router } = createApp()
+  // const { app, router } = createApp()
+  const { app } = createApp()
 
   // set the router to the desired URL before rendering
-  router.push(url)
-  await router.isReady()
+  // router.push(url)
+  // await router.isReady()
 
   // passing SSR context object which will be available via useSSRContext()
   // @vitejs/plugin-vue injects code into a component's setup() that registers
