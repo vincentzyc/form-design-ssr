@@ -11,13 +11,13 @@
     <component :is="Component" />
     </Suspense>
     </router-view>-->
-    <Home />
+    <About />
   </div>
 </template>
 
 <script lang="ts">
 import { computed, defineComponent, onMounted } from "vue"
-import Home from "@/pages/Home.vue"
+import About from "@/pages/About.vue"
 // import RenderPage from "@/components/RenderPage";
 import { useStore } from '@/store'
 import { getSessionStorage, setSessionStorage } from "./utils/storage";
@@ -29,7 +29,7 @@ import { initScript } from "./utils/dom";
 
 export default defineComponent({
   components: {
-    Home
+    About
   },
   setup() {
     const store = useStore()
@@ -37,7 +37,7 @@ export default defineComponent({
     const wrapStyle = computed(() => {
       return pageData.value ? {
         ...formatStyle(pageData.value.style),
-        backgroundImage: `url(${pageData.value.style.backgroundImage})`
+        backgroundImage: `url(${pageData.value?.style?.backgroundImage})`
       } : {}
     })
 
