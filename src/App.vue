@@ -1,7 +1,7 @@
 <template>
   <div>
     <div :style="{wrapStyle}">
-      <p>123123</p>
+      <p>hahaha</p>
       <!-- <RenderPage /> -->
     </div>
     <!-- <router-link to="/">Home</router-link>|
