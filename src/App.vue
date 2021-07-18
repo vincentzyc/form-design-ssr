@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div :style="{wrapStyle}">
+    <div :style="wrapStyle">
       <p>hahaha</p>
       <!-- <RenderPage /> -->
     </div>
@@ -38,7 +38,7 @@ export default defineComponent({
       return pageData.value ? {
         ...formatStyle(pageData.value.style),
         backgroundImage: `url(${pageData.value?.style?.backgroundImage})`
-      } : {}
+      } : null
     })
 
     const initPage = (pgData: Record<string, any>) => {
