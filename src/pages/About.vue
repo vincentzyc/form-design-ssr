@@ -7,7 +7,7 @@
   <p>{{getres}}</p>
 </template>
 
-<script setup>
+<script setup  lang="ts">
 import Axios from '@/plugins/axios'
 import { ref, computed } from 'vue'
 import { Button } from 'vant';

@@ -8,12 +8,12 @@
   <p class="virtual">msg from virtual module: {{ foo.msg }}</p>
   <p class="inter">this will be styled with a font-face</p>
   <p>-------------</p>
-  <p>{{getres}}</p>
+  <p>{{ getres }}</p>
   <p>-------------</p>
   <ImportType />
 </template>
 
-<script setup>
+<script setup lang="ts">
 import foo from '@foo'
 import Axios from '@/plugins/axios'
 import { reactive, ref, defineAsyncComponent } from 'vue'
