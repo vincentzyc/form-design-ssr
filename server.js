@@ -17,7 +17,7 @@ async function createServer(
 
   const manifest = isProd
     ? // @ts-ignore
-      require('./dist/client/ssr-manifest.json')
+    require('./dist/client/ssr-manifest.json')
     : {}
 
   const app = express()
@@ -71,6 +71,7 @@ async function createServer(
       const html = template
         .replace(`<!--preload-links-->`, preloadLinks)
         .replace(`<!--app-html-->`, appHtml)
+        .replace(`<!--app-title-->`, globalThis.appTitle)
 
       res.status(200).set({ 'Content-Type': 'text/html' }).end(html)
     } catch (e) {
