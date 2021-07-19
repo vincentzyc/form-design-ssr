@@ -26,6 +26,7 @@ import '@/assets/css/widget.styl';
 import '@/assets/css/themes.styl';
 import { formatStyle } from "./utils/format/unit";
 import { initScript } from "./utils/dom";
+import { defaultPageData } from "@/assets/js/page-data"
 
 export default defineComponent({
   components: {
@@ -47,42 +48,11 @@ export default defineComponent({
       document.title = pgData.title;
       initScript(pgData.statsCode, 'initjscode');  //添加第三方统计代码
     }
-    const getPageData = () => {
-      // 获取数据优先级： url参数id > 本地 sessionStorage > postMessage监听
 
-      // 获取url参数id（已经保存的页面）
-      // let id = this.$util.getUrlParam('id');
-      // 根据id调接口获取后台数据
-      // console.log(id);
-
-      // 本地 sessionStorage获取（实时预览的时候刷新页面）
-      const sPageData = getSessionStorage("pageData");
-      if (sPageData) {
-        return initPage(sPageData);
-      }
-
-      // postMessage监听（实时预览）
-      window.addEventListener('message', event => {
-        if (event.origin !== postMsgoOrigin()) return;
-        if (Object.prototype.toString.call(event.data) === '[object Object]') {
-          if (event.data.list) {
-            const sourceWin = event.source as Window
-            sourceWin.postMessage('Received', postMsgoUrl());
-            initPage(event.data)
-            return setSessionStorage("pageData", event.data);
-          }
-        }
-      }, false);
-    }
-
-    onMounted(() => {
-      getPageData()
-    })
-
+    initPage(defaultPageData);
 
     return {
-      wrapStyle,
-      getPageData
+      wrapStyle
     }
   }
 })
