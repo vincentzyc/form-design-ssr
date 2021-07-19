@@ -20,12 +20,12 @@ import { computed, defineComponent, onMounted } from "vue"
 import About from "@/pages/About.vue"
 // import RenderPage from "@/components/RenderPage";
 import { useStore } from '@/store'
-import { getSessionStorage, setSessionStorage } from "./utils/storage";
-import { postMsgoOrigin, postMsgoUrl } from "./api";
+// import { getSessionStorage, setSessionStorage } from "./utils/storage";
+// import { postMsgoOrigin, postMsgoUrl } from "./api";
 import '@/assets/css/widget.styl';
 import '@/assets/css/themes.styl';
 import { formatStyle } from "./utils/format/unit";
-import { initScript } from "./utils/dom";
+// import { initScript } from "./utils/dom";
 import { defaultPageData } from "@/assets/js/page-data"
 
 export default defineComponent({
@@ -45,8 +45,9 @@ export default defineComponent({
     const initPage = (pgData: Record<string, any>) => {
       if (!pgData) return;
       store.commit('setPageData', pgData);
-      document.title = pgData.title;
-      initScript(pgData.statsCode, 'initjscode');  //添加第三方统计代码
+      globalThis.appTitle = pgData.title
+      // document.title = pgData.title;
+      // initScript(pgData.statsCode, 'initjscode');  //添加第三方统计代码
     }
 
     initPage(defaultPageData);
