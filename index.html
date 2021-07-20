@@ -9,20 +9,12 @@
 	<meta name="format-detection" content="telephone=no,email=no,address=no,date=no,url=no" />
 	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 	<title><!--app-title--></title>
+  <style type="text/css">
+    @charset "utf-8";audio,body,div,footer,header,html,iframe,img,input,li,menu,nav,ol,p,span,ul,video{margin:0;padding:0;border:0;font-weight:400;vertical-align:baseline}*,::after,::before{-webkit-tap-highlight-color:transparent;-ms-tap-highlight-color:transparent;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}::-webkit-scrollbar{display:none}a{text-decoration:none}li{list-style:none}.container{position:relative}.row{position:relative;width:100%}.relative{position:relative}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.pull-right{float:right!important}.pull-left{float:left!important}.block{display:block!important}.inline{display:inline!important}.inline-block{display:inline-block!important}.clearfix:after,.clearfix:before{display:table;content:' '}.clearfix:after{clear:both}.flex{display:flex!important}.flex-inline{display:inline-flex!important}.flex-row{flex-direction:row}.flex-column{flex-direction:column}.row-reverse{flex-direction:row-reverse}.column-reverse{flex-direction:column-reverse}.flex-wrap{flex-wrap:wrap}.flex-nowrap{flex-wrap:nowrap}.space-around{justify-content:space-around}.space-between{justify-content:space-between}.justify-start{justify-content:flex-start}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.stretch{align-items:stretch}.align-start{align-items:flex-start}.align-end{align-items:flex-end}.align-middle{align-items:center}.flex-center{justify-content:center;align-items:center}.flex-first{order:-1}.flex-last{order:1}.flex-auto{flex:auto}.flex-none{flex:none}.selft-stretch{align-self:stretch}.align-self-start{align-self:flex-start}.align-self-end{align-self:flex-end}.align-self-middle{align-self:center}.txtover{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.txtover-2{overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}.txtover-3{overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical}
+  </style>
 	<script type="text/javascript">
 		//简化压缩版 flexible.min.js ，根据实际情况决定是否使用
-		! function(e, t) {
-			function n() {
-				var n = s.getBoundingClientRect().width;
-				t = t || 540, n > t && (n = t);
-				var i = 100 * n / e;
-				s.style.fontSize = i + "px"
-			}
-			var i, o = document,
-				d = window,
-				s = o.documentElement;
-			n(), d.addEventListener("resize", function() { clearTimeout(i), i = setTimeout(n, 300) }, !1), d.addEventListener("pageshow", function(e) { e.persisted && (clearTimeout(i), i = setTimeout(n, 300)) }, !1), d.addEventListener("DOMContentLoaded", function() { o.body.style.position = "relative", o.body.style.fontSize = "14px", o.body.style.margin = "0 auto", o.body.style.maxWidth = t + "px" }, !1)
-		}(750, 640);
+    !function(e,t){function n(){if(d.body){var n=u.getBoundingClientRect().width;t=t||540,n>t&&(n=t),a=100*n/e,u.style.fontSize=a+"px",i()}}function i(){d.body.style.position="relative",d.body.style.fontSize=14/a+"rem",d.body.style.margin="0 auto",d.body.style.maxWidth=t+"px"}var o,d=document,s=window,u=d.documentElement,a=14;s.addEventListener("resize",function(){clearTimeout(o),o=setTimeout(n(),300)},!1),s.addEventListener("pageshow",function(e){e.persisted&&(clearTimeout(o),o=setTimeout(n(),300))},!1),s.addEventListener("DOMContentLoaded",function(){n()},!1)}(720,640);
 	</script>
 	<!--preload-links-->
 </head>
