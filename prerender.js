@@ -26,6 +26,7 @@ const routesToPrerender = fs
     const html = template
       .replace(`<!--preload-links-->`, preloadLinks)
       .replace(`<!--app-html-->`, appHtml)
+      .replace(`<!--app-title-->`, globalThis.appTitle)
 
     const filePath = `dist/static${url === '/' ? '/index' : url}.html`
     fs.writeFileSync(toAbsolute(filePath), html)
