@@ -8,13 +8,14 @@
   <p class="virtual">msg from virtual module: {{ foo.msg }}</p>
   <p class="inter">this will be styled with a font-face</p>
   <p>-------------</p>
-  <p>{{ getres }}</p>
+  <About />
   <p>-------------</p>
   <ImportType />
 </template>
 
 <script setup lang="ts">
 import foo from '@foo'
+import About from "@/pages/About.vue"
 import Axios from '@/plugins/axios'
 import { reactive, ref, defineAsyncComponent } from 'vue'
 const ImportType = load('ImportType')
@@ -25,15 +26,10 @@ function load(file) {
   return defineAsyncComponent(() => import(`../components/${file}.vue`))
 }
 
-const getres = ref('')
 const kdnum = ref('')
 
 const handClick = () => {
   state.count++
-  const num = kdnum.value || '1201594647434'
-  Axios.get('https://biz.trace.ickd.cn/auto/' + num).then(res => {
-    getres.value = res.data
-  })
 }
 const state = reactive({ count: 0 })
 </script>
