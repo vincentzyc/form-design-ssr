@@ -43,7 +43,6 @@ export default defineComponent({
     }
 
     onMounted(() => {
-      console.log(pageData.value);
       initScript(pageData.value.statsCode, 'initjscode');  //添加第三方统计代码
     })
 
