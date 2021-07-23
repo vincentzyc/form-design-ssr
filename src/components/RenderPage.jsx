@@ -1,5 +1,5 @@
 import { computed, defineComponent, ref, Transition } from "vue"
-import WidgetItems from "@/components/WidgetItems";
+import WidgetItems from "@/components/WidgetItems/index.vue";
 import { formatStyle } from "@/utils/format/unit";
 import { isLink } from "@/utils/validate/link";
 import { useStore } from '@/store'
