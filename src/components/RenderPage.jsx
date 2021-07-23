@@ -1,5 +1,5 @@
 import { computed, defineComponent, ref, Transition } from "vue"
-// import WidgetItems from "@/components/WidgetItems";
+import WidgetItems from "@/components/WidgetItems";
 import { formatStyle } from "@/utils/format/unit";
 import { isLink } from "@/utils/validate/link";
 import { useStore } from '@/store'
@@ -82,8 +82,8 @@ export default defineComponent({
     //     </div>
     //   </Transition> : null
 
-    // const listNode = () => list.length > 0 ?
-    //   (list as Record<string, any>[]).map(item => <WidgetItems item={item} key={item.key} />) : []
+    const listNode = () => list.length > 0 ?
+      list.map(item => <WidgetItems item={item} key={item.key} />) : [] 
 
     // const backDialog = () => isHijack.value ?
     //   <van-dialog
@@ -106,7 +106,7 @@ export default defineComponent({
 
     return () => (
       <div class="widget-list">
-        6666666
+        {listNode()}
         {/* {fixedTopNode()}
         {fixedCustomNode()}
         {listNode()}
