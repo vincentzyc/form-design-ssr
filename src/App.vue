@@ -2,7 +2,7 @@
   <div>
     <div :style="wrapStyle">
       <p>hahaha</p>
-      <!-- <RenderPage /> -->
+      <RenderPage />
     </div>
     <Home />
   </div>
@@ -11,7 +11,7 @@
 <script lang="ts">
 import { computed, defineComponent, onMounted } from "vue"
 import Home from "@/pages/Home.vue"
-// import RenderPage from "@/components/RenderPage";
+import RenderPage from "@/components/RenderPage";
 import { useStore } from '@/store'
 // import { getSessionStorage, setSessionStorage } from "./utils/storage";
 // import { postMsgoOrigin, postMsgoUrl } from "./api";
@@ -24,7 +24,7 @@ import { defaultPageData } from "@/assets/js/page-data"
 
 export default defineComponent({
   components: {
-    Home
+    Home, RenderPage
   },
   setup() {
     const store = useStore()
