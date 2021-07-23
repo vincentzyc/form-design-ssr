@@ -46,7 +46,7 @@ export default defineComponent({
     })
 
     initPage(defaultPageData);
-
+    
     return {
       wrapStyle
     }
