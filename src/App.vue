@@ -1,7 +1,6 @@
 <template>
   <div>
     <div :style="wrapStyle">
-      <p>hahaha</p>
       <RenderPage />
     </div>
     <Home />
