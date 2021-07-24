@@ -20,7 +20,7 @@ import Axios from '@/plugins/axios'
 import { reactive, ref, defineAsyncComponent } from 'vue'
 const ImportType = load('ImportType')
 const Foo = defineAsyncComponent(() =>
-  import('../components/Foo').then((mod) => mod.Foo)
+  import('../components/Foo/Foo').then((mod) => mod.Foo)
 )
 function load(file) {
   return defineAsyncComponent(() => import(`../components/${file}.vue`))
