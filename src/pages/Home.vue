@@ -22,7 +22,7 @@ const ImportType = load('ImportType')
 const Foo = defineAsyncComponent(() =>
   import('../components/Foo/Foo').then((mod) => mod.Foo)
 )
-function load(file) {
+function load(file:string) {
   return defineAsyncComponent(() => import(`../components/${file}.vue`))
 }
 
