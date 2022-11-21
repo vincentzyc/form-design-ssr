@@ -1,7 +1,15 @@
 <template>
   <h1>About</h1>
   <p>Demo app using <code>vite-plugin-ssr</code>.</p>
+  <DragVerify :isPassing="isPassing" />
 </template>
+
+<script lang="ts" setup>
+import { ref } from "vue";
+import DragVerify from "../../components/DragVerify/DragVerify.vue";
+
+const isPassing = ref(false);
+</script>
 
 <style>
 code {

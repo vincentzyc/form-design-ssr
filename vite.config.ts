@@ -3,7 +3,12 @@ import ssr from 'vite-plugin-ssr/plugin'
 import { UserConfig } from 'vite'
 
 const config: UserConfig = {
-  plugins: [vue(), ssr()]
+  plugins: [
+    vue({
+      reactivityTransform: true
+    }),
+    ssr()
+  ]
 }
 
 export default config
