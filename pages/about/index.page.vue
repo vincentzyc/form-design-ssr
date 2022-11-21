@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
 import { ref } from "vue";
-import DragVerify from "@components/DragVerify/DragVerify.vue";
+import DragVerify from "@cp/DragVerify/DragVerify.vue";
 
 const isPassing = ref(false);
 </script>
