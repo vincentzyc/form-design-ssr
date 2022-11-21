@@ -8,7 +8,12 @@ const config: UserConfig = {
       reactivityTransform: true
     }),
     ssr()
-  ]
+  ],
+  resolve: {
+    alias: {
+      "@components": "/components"
+    }
+  }
 }
 
 export default config
