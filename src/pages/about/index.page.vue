@@ -7,7 +7,7 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import DragVerify from "@cp/DragVerify/DragVerify.vue";
-import { usePageContext } from "../../renderer/usePageContext";
+import { usePageContext } from "@/renderer/usePageContext";
 
 const pageContext = usePageContext()
 
