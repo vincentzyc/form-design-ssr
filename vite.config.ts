@@ -11,8 +11,8 @@ const config: UserConfig = {
   ],
   resolve: {
     alias: {
-      "@cp": "/src/components",
-      "@": "/src"
+      "@": "/src",
+      "@cp": "/src/components"
     }
   }
 }
