@@ -17,6 +17,7 @@ specifiers:
   vite: ^3.0.9
   vite-plugin-ssr: ^0.4.48
   vue: ^3.2.33
+  vue-dompurify-html: ^3.1.1
 
 dependencies:
   '@types/compression': 1.7.2
@@ -35,6 +36,7 @@ dependencies:
   vite: 3.2.4_@types+node@17.0.45
   vite-plugin-ssr: 0.4.48_vite@3.2.4
   vue: 3.2.45
+  vue-dompurify-html: 3.1.1_vue@3.2.45
 
 packages:
 
@@ -513,6 +515,10 @@ packages:
   /diff/4.0.2:
     resolution: {integrity: sha512-58lmxKSA4BNyLz+HHMUzlOEpg09FV+ev6ZMe3vJihgdxzgcwZ8VoEEPmALCZG9LmqfVoNMMKpttIYTVG6uDY7A==}
     engines: {node: '>=0.3.1'}
+    dev: false
+
+  /dompurify/2.4.1:
+    resolution: {integrity: sha512-ewwFzHzrrneRjxzmK6oVz/rZn9VWspGFRDb4/rRtIsM1n36t9AKma/ye8syCpcw+XJ25kOK/hOG7t1j2I2yBqA==}
     dev: false
 
   /ee-first/1.1.1:
@@ -1471,6 +1477,33 @@ packages:
       rollup: 2.79.1
     optionalDependencies:
       fsevents: 2.3.2
+    dev: false
+
+  /vue-demi/0.13.11_vue@3.2.45:
+    resolution: {integrity: sha512-IR8HoEEGM65YY3ZJYAjMlKygDQn25D5ajNFNoKh9RSDMQtlzCxtfQjdQgv9jjK+m3377SsJXY8ysq8kLCZL25A==}
+    engines: {node: '>=12'}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      vue: 3.2.45
+    dev: false
+
+  /vue-dompurify-html/3.1.1_vue@3.2.45:
+    resolution: {integrity: sha512-6ozMTqVlLdfVKh/FIdKT6e7yrwo4NlOKNr/7rTrNsLbjzhNjY3YvRKn2o65LpnghcdUbIETWlkMlvzJbwP+SQw==}
+    peerDependencies:
+      vue: ^2.7.0 || ^3.0.0
+    dependencies:
+      dompurify: 2.4.1
+      vue: 3.2.45
+      vue-demi: 0.13.11_vue@3.2.45
+    transitivePeerDependencies:
+      - '@vue/composition-api'
     dev: false
 
   /vue/3.2.45:
