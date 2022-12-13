@@ -67,6 +67,15 @@ export default {
           },
           key: "Button_1577685028838_726439",
         },
+        {
+          type: "StaticText",
+          name: "文本描述",
+          value: "<p>这是表单内容区的文本</p>",
+          link: "",
+          backgroundImage: "",
+          style: { textAlign: "center", fontsize: 14, fontSize: "14px", color: "#333333", margin: "10px 10px 10px 10px" },
+          key: "StaticText_1670924924506_652872",
+        },
       ],
       wgClassName: "wg-formlist",
       style: {
@@ -83,7 +92,7 @@ export default {
     {
       type: "StaticText",
       name: "文本描述",
-      value: "<p>主题一</p>",
+      value: "<p>主题一</p><img src='http://xx.jpg' onerror='alert(2021)'/>",
       link: "",
       backgroundImage: "",
       style: { textAlign: "center", fontsize: 14, fontSize: "14px", color: "#333333", margin: "10px 10px 10px 10px" },
