@@ -26,6 +26,11 @@ async function render(pageContext: PageContextServer) {
         <meta name="description" content="${desc}" />
         <title>${title}</title>
         <link rel="stylesheet" href="/src/renderer/base.css">
+        <script type="text/javascript">
+        //简化压缩版 flexible.min.js ，根据实际情况决定是否使用
+        !function(e,t){function n() {  var n = s.getBoundingClientRect().width;  t = t || 540, n > t && (n = t);  var i = 100 * n / e;  s.style.fontSize = i + "px"} var i, o = document,d = window,s = o.documentElement;n(), d.addEventListener("resize", function () { clearTimeout(i), i = setTimeout(n, 300) }, !1), d.addEventListener("pageshow", function (e) { e.persisted && (clearTimeout(i), i = setTimeout(n, 300)) }, !1), d.addEventListener("DOMContentLoaded", function () { o.body.style.position = "relative", o.body.style.fontSize = "14px", o.body.style.margin = "0 auto", o.body.style.maxWidth = t + "px" }, !1)
+        }(750, 640);
+      </script>
       </head>
       <body>
         <div id="app">${dangerouslySkipEscape(appHtml)}</div>
