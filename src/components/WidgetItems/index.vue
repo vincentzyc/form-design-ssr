@@ -6,13 +6,18 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import WgChildList from "./WgChildList.vue";
 import WgImgShow from "./WgImgShow.vue";
 import WgSplitLine from "./WgSplitLine.vue";
+import WgStaticText from "./WgStaticText.vue";
 
 export default defineComponent({
+  name: "WidgetItems",
   components: {
+    WgChildList,
     WgImgShow,
     WgSplitLine,
+    WgStaticText,
   },
 });
 </script>
