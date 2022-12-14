@@ -70,7 +70,7 @@ export default {
         {
           type: "StaticText",
           name: "文本描述",
-          value: "<p>这是表单内容区的文本</p>",
+          value: "<p style='font-size:20px'>这是表单内容区的文本</p>",
           link: "",
           backgroundImage: "",
           style: { textAlign: "center", fontsize: 14, fontSize: "14px", color: "#333333", margin: "10px 10px 10px 10px" },
@@ -92,7 +92,7 @@ export default {
     {
       type: "StaticText",
       name: "文本描述",
-      value: "<p>主题一</p>",
+      value: "<p style='font-size:36px'>主题一</p>",
       link: "",
       backgroundImage: "",
       style: { textAlign: "center", fontsize: 14, fontSize: "14px", color: "#333333", margin: "10px 10px 10px 10px" },
