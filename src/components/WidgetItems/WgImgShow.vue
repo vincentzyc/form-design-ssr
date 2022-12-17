@@ -1,5 +1,5 @@
 <template>
-  <div :style="formatStyle(item.style)">
+  <div class="wg-img-show" :style="formatStyle(item.style)">
     <ul class="flex flex-wrap" v-for="imgitem in item.imglist">
       <li :class="[item.styleType === 'col1' ? 'col-12' : 'col-6']">
         <div :class="imgWrapClass(imgitem.link)" @click="jumpLink(imgitem.link)">
