@@ -13,7 +13,7 @@
               :style="formatStyle(item.timeStyle)"
               class="countdown-timeblock"
               v-if="timeData.days > 0 || timeData.hours > 0"
-              >{{ timeData.hours > 9 ? timeData.hours : "0" + timeData.hours }}</span
+              >{{ formatNumber(timeData.hours) }}</span
             >
             <span
               :style="formatStyle(item.unitStyle)"
@@ -25,7 +25,7 @@
               :style="formatStyle(item.timeStyle)"
               class="countdown-timeblock"
               v-if="timeData.days > 0 || timeData.hours > 0 || timeData.minutes > 0"
-              >{{ timeData.minutes > 9 ? timeData.minutes : "0" + timeData.minutes }}</span
+              >{{ formatNumber(timeData.minutes) }}</span
             >
             <span
               :style="formatStyle(item.unitStyle)"
@@ -33,9 +33,9 @@
               v-if="timeData.days > 0 || timeData.hours > 0 || timeData.minutes > 0"
               >分</span
             >
-            <span :style="formatStyle(item.timeStyle)" class="countdown-timeblock">{{
-              timeData.seconds > 9 ? timeData.seconds : "0" + timeData.seconds
-            }}</span>
+            <span :style="formatStyle(item.timeStyle)" class="countdown-timeblock">
+              {{ formatNumber(timeData.seconds) }}</span
+            >
             <span :style="formatStyle(item.unitStyle)" class="countdown-colon">秒</span>
           </div>
         </template>
@@ -84,6 +84,8 @@ function initCountDown() {
     isFinished = props.item.endTime < Date.now();
   }
 }
+const formatNumber = (t: number) => (t > 9 ? t : "0" + t);
+
 onMounted(async () => {
   await nextTick();
   initCountDown();
