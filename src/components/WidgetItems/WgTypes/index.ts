@@ -1,5 +1,6 @@
 export * from "./StaticText"
 export * from "./VideoPlay"
+export * from "./Button"
 // export * from "./Tabs"
 // export * from "./Wechat"
 export * from "./ImgShow"
