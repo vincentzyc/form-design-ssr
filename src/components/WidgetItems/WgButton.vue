@@ -1,15 +1,13 @@
 <template>
-        <div class={wrapClass()} :style="wrapStyle()"">
-        <span :style="animteStyle()" class="animte-el"></span>
-        <!-- {getChildren()} -->
-        <button
-          class="wg-button"
-          :style="formatStyle(props.item.style.btnStyle)"
-        >{{ item.btnText }}</button>
-        <!-- onClick={clickBtn} -->
-      </div>
+  <div class="{wrapClass()}" :style="wrapStyle()">
+    <span :style="animteStyle()" class="animte-el"></span>
+    <!-- {getChildren()} -->
+    <img v-if="item.style.isImgBtn" :src="props.item.style.value" alt="图片按钮" width="100%" @click="clickBtn()" />
+    <button v-else class="wg-button" :style="formatStyle(props.item.style.btnStyle)" @click="clickBtn()">{{
+      item.btnText
+    }}</button>
+  </div>
 </template>
-
 
 <script lang="ts" setup>
 // import { handleSubmit } from "@/validate/index"
@@ -22,28 +20,37 @@ const props = defineProps<{
 }>();
 
 const wrapStyle = () => {
-      if (!props.item.animation) return formatStyle(props.item.style)
-      return formatStyle({
-        ...props.item.style,
-        ...props.item.animation
-      })
-    }
+  if (!props.item.animation) return formatStyle(props.item.style);
+  return formatStyle({
+    ...props.item.style,
+    ...props.item.animation,
+  });
+};
 
 const animteStyle = () => {
-      if (!props.item.animation?.className) return { display: 'none' }
-      return {
-        ...props.item.animation,
-        animationName: props.item.animation.className
-      }
-    }
+  if (!props.item.animation?.className) return { display: "none" };
+  return {
+    ...props.item.animation,
+    animationName: props.item.animation.className,
+  };
+};
 
-    const wrapClass = () => {
-      if (!props.item.animation) return 'flex flex-center'
-      return `flex flex-center ${props.item.animation.className}`
-    }
+const wrapClass = () => {
+  if (!props.item.animation) return "flex flex-center";
+  return `flex flex-center ${props.item.animation.className}`;
+};
+
+const clickBtn = () => {
+  console.log(123);
+  // switch (props.item.btnType) {
+  //   case 'submit':
+  //     handleSubmit(formData.value, wgForms.value)
+  //     break;
+  //   default:
+  //     break;
+  // }
+};
 </script>
-
-
 
 <!-- export default defineComponent({
   props: {
