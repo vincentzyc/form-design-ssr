@@ -1,7 +1,6 @@
 <template>
   <div class="{wrapClass()}" :style="wrapStyle()">
     <span :style="animteStyle()" class="animte-el"></span>
-    <!-- {getChildren()} -->
     <img v-if="item.style.isImgBtn" :src="props.item.style.value" alt="图片按钮" width="100%" @click="clickBtn()" />
     <button v-else class="wg-button" :style="formatStyle(props.item.style.btnStyle)" @click="clickBtn()">{{
       item.btnText
