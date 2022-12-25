@@ -11,6 +11,7 @@ import WgImgShow from "./WgImgShow.vue";
 import WgSplitLine from "./WgSplitLine.vue";
 import WgStaticText from "./WgStaticText.vue";
 import WgCountDown from "./WgCountDown.vue";
+import WgButton from "./WgButton.vue";
 
 export default defineComponent({
   name: "WidgetItems",
@@ -19,7 +20,8 @@ export default defineComponent({
     WgImgShow,
     WgSplitLine,
     WgStaticText,
-    WgCountDown
+    WgCountDown,
+    WgButton
   },
 });
 </script>
