@@ -1,6 +1,8 @@
 import { createApp } from './app'
 import type { PageContextClient } from './types'
+import '../assets/css/main.css'
 import '../assets/css/widget.css'
+import '../assets/css/animte.css'
 
 export { render }
 
