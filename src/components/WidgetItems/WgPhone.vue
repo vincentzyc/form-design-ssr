@@ -1,9 +1,11 @@
 <template>
   <!-- <div class="wg-phone" :style="formatStyle(wgData.style)"> 123 </div> -->
-  <div class="wg-phone"> 123 </div>
+  <div class="wg-phone" :style="formatStyle(wgData.style)"> 123 </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { changeRem, formatStyle } from "@/utils/format/unit";
+</script>
 <!-- import { defineComponent, PropType } from "vue"
 import { useWgFormList } from '@/composition/use-wgform'
 import { changeRem, formatStyle } from "@/utils/format/unit"
