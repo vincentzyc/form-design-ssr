@@ -1,10 +1,36 @@
 <template>
   <!-- <div class="wg-phone" :style="formatStyle(wgData.style)"> 123 </div> -->
-  <div class="wg-phone" :style="formatStyle(wgData.style)"> 123 </div>
+  <div class="wg-phone" :style="formatStyle(item.style)">
+    <div :class="{ phoneClass }">
+      123456
+      <!-- <div
+            v-show={wgData.showLabel}
+            class="wg-title flex-none"
+            style={{ width: changeRem(wgData.label.labelWidth) }}
+          >{wgData.label.labelTitle}</div>
+          <div class="flex-auto">
+            <input
+              id={wgData.key}
+              class="wg-input"
+              type="tel"
+              maxlength={11}
+              v-model={[formData[wgData.apiKey], ['trim']]}
+              placeholder={wgData.placeholder}
+            />
+          </div> -->
+    </div>
+  </div>
 </template>
 
 <script lang="ts" setup>
 import { changeRem, formatStyle } from "@/utils/format/unit";
+import { TypesPhone } from "./WgTypes";
+
+const props = defineProps<{
+  item: TypesPhone;
+}>();
+
+const phoneClass = ["wg-item", props.item.label.labelPosition === "top" ? "flex-column" : "align-middle"];
 </script>
 <!-- import { defineComponent, PropType } from "vue"
 import { useWgFormList } from '@/composition/use-wgform'
