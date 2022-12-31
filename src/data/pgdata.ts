@@ -30,7 +30,7 @@ export default {
           type: "Phone",
           name: "手机号",
           placeholder: "请输入手机号",
-          showLabel: false,
+          showLabel: true,
           label: { labelTitle: "手机号", labelPosition: "left", labelwidth: 50, labelWidth: "50px" },
           value: "",
           apiKey: "phone",
