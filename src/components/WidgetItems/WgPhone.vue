@@ -1,6 +1,6 @@
 <template>
   <div class="wg-phone" :style="formatStyle(item.style)">
-    <div :class="{ phoneClass }">
+    <div :class="phoneClass">
       <div v-show="item.showLabel" class="wg-title flex-none" :style="{ width: changeRem(item.label.labelWidth) }">{{
         item.label.labelTitle
       }}</div>
