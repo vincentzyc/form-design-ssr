@@ -1,23 +1,19 @@
 <template>
-  <!-- <div class="wg-phone" :style="formatStyle(wgData.style)"> 123 </div> -->
   <div class="wg-phone" :style="formatStyle(item.style)">
     <div :class="{ phoneClass }">
-      123456
-      <!-- <div
-            v-show={wgData.showLabel}
-            class="wg-title flex-none"
-            style={{ width: changeRem(wgData.label.labelWidth) }}
-          >{wgData.label.labelTitle}</div>
-          <div class="flex-auto">
-            <input
-              id={wgData.key}
-              class="wg-input"
-              type="tel"
-              maxlength={11}
-              v-model={[formData[wgData.apiKey], ['trim']]}
-              placeholder={wgData.placeholder}
-            />
-          </div> -->
+      <div v-show="item.showLabel" class="wg-title flex-none" :style="{ width: changeRem(item.label.labelWidth) }">{{
+        item.label.labelTitle
+      }}</div>
+      <div class="flex-auto">
+        <input
+          :id="item.key"
+          class="wg-input"
+          type="tel"
+          maxLength="11"
+          v-model.trim="item.value"
+          :placeholder="item.placeholder"
+        />
+      </div>
     </div>
   </div>
 </template>
