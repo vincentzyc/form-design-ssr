@@ -15,6 +15,15 @@
         />
       </div>
     </div>
+    <div :class="codeClass" v-if="item.showCode">
+      <div v-show="item.showLabel" class="wg-title flex-none" :style="{ width: changeRem(item.label.labelWidth) }"
+        >验证码</div
+      >
+      <div class="flex flex-auto flex-center">
+        <input placeholder="验证码" type="tel" maxlength="{6}" v-model="item.codeValue" class="wg-input flex-auto" />
+        <!-- <ValidateCodeBtn phone={formData[item.apiKey]} style={formatStyle(item.style.btnStyle)} /> -->
+      </div>
+    </div>
   </div>
 </template>
 
@@ -27,6 +36,8 @@ const props = defineProps<{
 }>();
 
 const phoneClass = ["wg-item", props.item.label.labelPosition === "top" ? "flex-column" : "align-middle"];
+
+const codeClass = ["wg-item", props.item.label.labelPosition === "top" ? "flex-column" : "align-middle"];
 </script>
 <!-- import { defineComponent, PropType } from "vue"
 import { useWgFormList } from '@/composition/use-wgform'
