@@ -11,7 +11,6 @@
 <script lang="ts" setup>
 // import { handleSubmit } from "@/validate/index"
 import { formatStyle } from "@/utils/format/unit";
-import { showLoadingToast } from "vant";
 // import { useStore } from '@/store'
 import { TypesButton } from "./WgTypes";
 
@@ -42,10 +41,6 @@ const wrapClass = () => {
 
 const clickBtn = () => {
   console.log(123);
-  showLoadingToast({
-    message: "正在发送...",
-    forbidClick: true,
-  });
   // switch (props.item.btnType) {
   //   case 'submit':
   //     handleSubmit(formData.value, wgForms.value)
