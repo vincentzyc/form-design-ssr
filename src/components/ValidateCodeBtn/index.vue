@@ -1,5 +1,5 @@
 <template>
-  <button class="validate-code-btn" :disabled="disbtn" @click="getCode">获取验证码{{time}}</button>
+  <button class="validate-code-btn" :disabled="disbtn" @click="getCode">{{codetxt}} {{time}}</button>
 </template>
 
 <script lang="ts" setup>
