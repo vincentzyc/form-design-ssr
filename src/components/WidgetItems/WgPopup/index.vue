@@ -20,7 +20,7 @@ interface Props {
 }
 const props = withDefaults(defineProps<Props>(), {
   list: () => [],
-  show: true,
+  show: false,
 });
 
 const emit = defineEmits<{
