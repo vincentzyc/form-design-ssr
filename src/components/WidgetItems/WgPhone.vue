@@ -21,7 +21,7 @@
       >
       <div class="flex flex-auto flex-center">
         <input placeholder="验证码" type="tel" maxlength="{6}" v-model="item.codeValue" class="wg-input flex-auto" />
-        <!-- <ValidateCodeBtn phone={formData[item.apiKey]} style={formatStyle(item.style.btnStyle)} /> -->
+        <ValidateCodeBtn :phone="item.value" :style="formatStyle(item.style.btnStyle)" />
       </div>
     </div>
   </div>
@@ -30,6 +30,7 @@
 <script lang="ts" setup>
 import { changeRem, formatStyle } from "@/utils/format/unit";
 import { TypesPhone } from "./WgTypes";
+import ValidateCodeBtn from '@cp/ValidateCodeBtn/index.vue'
 
 const props = defineProps<{
   item: TypesPhone;
@@ -42,7 +43,6 @@ const codeClass = ["wg-item", props.item.label.labelPosition === "top" ? "flex-c
 <!-- import { defineComponent, PropType } from "vue"
 import { useWgFormList } from '@/composition/use-wgform'
 import { changeRem, formatStyle } from "@/utils/format/unit"
-import ValidateCodeBtn from '@/components/base/ValidateCodeBtn'
 import { TypesPhone } from "./WgTypes";
 
 export default defineComponent({
