@@ -13,11 +13,11 @@ specifiers:
   sirv: ^2.0.2
   ts-node: ^10.7.0
   typescript: ^4.6.4
-  vant: ^4.0.3
+  vant: ^4.0.7
   vite: ^3.0.9
   vite-plugin-ssr: ^0.4.48
-  vue: ^3.2.33
-  vue-dompurify-html: ^3.1.1
+  vue: ^3.2.45
+  vue-dompurify-html: ^3.1.2
 
 dependencies:
   '@types/compression': 1.7.2
@@ -32,11 +32,11 @@ dependencies:
   sirv: 2.0.2
   ts-node: 10.9.1_7cep2inysldxstbcrxlp3njwym
   typescript: 4.9.3
-  vant: 4.0.3_vue@3.2.45
+  vant: 4.0.7_vue@3.2.45
   vite: 3.2.4_@types+node@17.0.45
   vite-plugin-ssr: 0.4.48_vite@3.2.4
   vue: 3.2.45
-  vue-dompurify-html: 3.1.1_vue@3.2.45
+  vue-dompurify-html: 3.1.2_vue@3.2.45
 
 packages:
 
@@ -1408,8 +1408,8 @@ packages:
     resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}
     dev: false
 
-  /vant/4.0.3_vue@3.2.45:
-    resolution: {integrity: sha512-rBQCSdMyYxO9I3weQmdTxY28OkVLM7MSIjMx3qwMTsFONek6bodVGEYXF0+mzh/5EBMVXjqtHj6CvD6QphKkCg==}
+  /vant/4.0.7_vue@3.2.45:
+    resolution: {integrity: sha512-jApCwgr8EugardxVM5fjhPimB6TU7byS2frU41Vr+ZSE4Z+kx6DO6Gklu9/cb0O91g6nPq147Kx+wCLm5lCFJw==}
     peerDependencies:
       vue: ^3.0.0
     dependencies:
@@ -1494,8 +1494,8 @@ packages:
       vue: 3.2.45
     dev: false
 
-  /vue-dompurify-html/3.1.1_vue@3.2.45:
-    resolution: {integrity: sha512-6ozMTqVlLdfVKh/FIdKT6e7yrwo4NlOKNr/7rTrNsLbjzhNjY3YvRKn2o65LpnghcdUbIETWlkMlvzJbwP+SQw==}
+  /vue-dompurify-html/3.1.2_vue@3.2.45:
+    resolution: {integrity: sha512-2xCnSuog5+OPUtmeAwPZY/6oV9YKuLhjgcl5EUw3jKbmhnyPo8YyCczCeRNGBorVcz1fCGm6PEOIUSXNS8I0ZA==}
     peerDependencies:
       vue: ^2.7.0 || ^3.0.0
     dependencies:
