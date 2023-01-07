@@ -1,5 +1,5 @@
 <template>
-  <button class="validate-code-btn" :disabled="disbtn" @click="getCode">{{codetxt}} {{time}}</button>
+  <button class="validate-code-btn" :disabled="disbtn" @click="getCode">{{ codetxt }} {{ time }}</button>
 </template>
 
 <script lang="ts" setup>
@@ -58,6 +58,14 @@ const sendcCode = () => {
   );
   showToast("验证码已发送");
 };
+async function getVerifyCode(phone: string) {
+  console.log(phone);
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(true);
+    }, 1000);
+  });
+}
 const getCode = async () => {
   if (disbtn) return;
   if (!/^1[3-9]\d{9}$/.test(props.phone)) {
@@ -68,10 +76,8 @@ const getCode = async () => {
     message: "正在发送...",
     forbidClick: true,
   });
-  // await getVerifyCode(props.phone);
-  setTimeout(() => {
-    closeToast();
-    sendcCode();
-  }, 2000);
+  await getVerifyCode(props.phone);
+  closeToast();
+  sendcCode();
 };
 </script>
