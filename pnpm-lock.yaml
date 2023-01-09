@@ -10,6 +10,7 @@ specifiers:
   compression: ^1.7.4
   cross-env: ^7.0.3
   express: ^4.18.1
+  pinia: ^2.0.28
   sirv: ^2.0.2
   ts-node: ^10.7.0
   typescript: ^4.6.4
@@ -29,6 +30,7 @@ dependencies:
   compression: 1.7.4
   cross-env: 7.0.3
   express: 4.18.2
+  pinia: 2.0.28_mgnvym7yiazkylwwogi5r767ue
   sirv: 2.0.2
   ts-node: 10.9.1_7cep2inysldxstbcrxlp3njwym
   typescript: 4.9.3
@@ -271,6 +273,10 @@ packages:
     dependencies:
       '@vue/compiler-dom': 3.2.45
       '@vue/shared': 3.2.45
+    dev: false
+
+  /@vue/devtools-api/6.4.5:
+    resolution: {integrity: sha512-JD5fcdIuFxU4fQyXUu3w2KpAJHzTVdN+p4iOX2lMWSHMOoQdMAcpFLZzm9Z/2nmsoZ1a96QEhZ26e50xLBsgOQ==}
     dev: false
 
   /@vue/reactivity-transform/3.2.45:
@@ -1123,6 +1129,24 @@ packages:
   /picomatch/2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
+    dev: false
+
+  /pinia/2.0.28_mgnvym7yiazkylwwogi5r767ue:
+    resolution: {integrity: sha512-YClq9DkqCblq9rlyUual7ezMu/iICWdBtfJrDt4oWU9Zxpijyz7xB2xTwx57DaBQ96UGvvTMORzALr+iO5PVMw==}
+    peerDependencies:
+      '@vue/composition-api': ^1.4.0
+      typescript: '>=4.4.4'
+      vue: ^2.6.14 || ^3.2.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+      typescript:
+        optional: true
+    dependencies:
+      '@vue/devtools-api': 6.4.5
+      typescript: 4.9.3
+      vue: 3.2.45
+      vue-demi: 0.13.11_vue@3.2.45
     dev: false
 
   /postcss/8.4.19:
