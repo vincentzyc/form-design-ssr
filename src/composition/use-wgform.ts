@@ -1,5 +1,5 @@
-import { computed } from "vue"
-import { useStore } from '@/store'
+import { storeToRefs } from 'pinia'
+import { useMainStore } from '@/pinia'
 
 interface BaseItem {
   key: string,
@@ -9,9 +9,8 @@ interface BaseItem {
 }
 
 export function useWgFormList() {
-  const store = useStore()
-  const formData = computed(() => store.state.formData)
-  const wgForms = computed(() => store.state.wgForms)
+  const store = useMainStore()
+  const { formData, wgForms } = storeToRefs(store)
 
   const useAddForm = <T extends BaseItem>(item: T) => {
     const index = wgForms.value.findIndex(v => v.key === item.key)
