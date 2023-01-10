@@ -31,15 +31,19 @@
 import { changeRem, formatStyle } from "@/utils/format/unit";
 import { TypesPhone } from "./WgTypes";
 import ValidateCodeBtn from '@cp/ValidateCodeBtn/index.vue'
-import { useMainStore } from '@/pinia'
+import { useWgFormList } from "@/composition/use-wgform";
 
 const props = defineProps<{
   item: TypesPhone;
 }>();
 
-const mainStore = useMainStore()
+const wgFormList = useWgFormList()
 
-console.log(mainStore)
+const { wgData, formData } = wgFormList.useAddForm(props.item)
+
+console.log(wgFormList)
+console.log(wgData)
+console.log(formData)
 
 const phoneClass = ["wg-item", props.item.label.labelPosition === "top" ? "flex-column" : "align-middle"];
 
