@@ -10,7 +10,7 @@
           class="wg-input"
           type="tel"
           maxLength="11"
-          v-model.trim="item.value"
+          v-model.trim="formData[wgData.apiKey]"
           :placeholder="item.placeholder"
         />
       </div>
@@ -20,10 +20,11 @@
         >验证码</div
       >
       <div class="flex flex-auto flex-center">
-        <input placeholder="验证码" type="tel" maxlength="6" v-model="item.codeValue" class="wg-input flex-auto" />
-        <ValidateCodeBtn :phone="item.value" :style="formatStyle(item.style.btnStyle)" />
+        <input placeholder="验证码" type="tel" maxlength="6" v-model="formData[wgData.codeKey]" class="wg-input flex-auto" />
+        <ValidateCodeBtn :phone="formData[wgData.apiKey]" :style="formatStyle(item.style.btnStyle)" />
       </div>
     </div>
+    {{ formData }}
   </div>
 </template>
 
