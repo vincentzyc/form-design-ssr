@@ -31,10 +31,15 @@
 import { changeRem, formatStyle } from "@/utils/format/unit";
 import { TypesPhone } from "./WgTypes";
 import ValidateCodeBtn from '@cp/ValidateCodeBtn/index.vue'
+import { useMainStore } from '@/pinia'
 
 const props = defineProps<{
   item: TypesPhone;
 }>();
+
+const mainStore = useMainStore()
+
+console.log(mainStore)
 
 const phoneClass = ["wg-item", props.item.label.labelPosition === "top" ? "flex-column" : "align-middle"];
 
