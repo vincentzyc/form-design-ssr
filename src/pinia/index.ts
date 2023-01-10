@@ -5,6 +5,8 @@ import { defineStore } from 'pinia'
 export const useMainStore = defineStore('main', {
   // a function that returns a fresh state
   state: () => ({
+    wgForms: [] as Record<string, any>[],
+    formData: {} as Record<string, any>,
     counter: 0,
     name: 'Eduardo',
     configTab: 'page',
