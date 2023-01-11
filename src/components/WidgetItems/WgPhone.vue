@@ -41,10 +41,6 @@ const wgFormList = useWgFormList()
 
 const { wgData, formData } = wgFormList.useAddForm(props.item)
 
-console.log(wgFormList)
-console.log(wgData)
-console.log(formData)
-
 const phoneClass = ["wg-item", props.item.label.labelPosition === "top" ? "flex-column" : "align-middle"];
 
 const codeClass = ["wg-item", props.item.label.labelPosition === "top" ? "flex-column" : "align-middle"];
