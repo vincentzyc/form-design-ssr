@@ -24,7 +24,6 @@
         <ValidateCodeBtn :phone="formData[wgData.apiKey]" :style="formatStyle(item.style.btnStyle)" />
       </div>
     </div>
-    {{ formData }}
   </div>
 </template>
 
