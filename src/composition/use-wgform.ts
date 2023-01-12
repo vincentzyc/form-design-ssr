@@ -1,4 +1,4 @@
-import { storeToRefs } from 'pinia'
+// import { storeToRefs } from 'pinia'
 import { useMainStore } from '@/pinia'
 
 interface BaseItem {
@@ -10,16 +10,16 @@ interface BaseItem {
 
 export function useWgFormList() {
   const store = useMainStore()
-  const { formData, wgForms } = storeToRefs(store)
+  // const { formData, wgForms } = storeToRefs(store)
 
   const useAddForm = <T extends BaseItem>(item: T) => {
-    const index = wgForms.value.findIndex(v => v.key === item.key)
-    index > -1 ? wgForms.value.splice(index, 1, item) : wgForms.value.push(item)
-    if (item.apiKey) formData.value[item.apiKey] = item.value || ''
-    if (item.codeKey) formData.value[item.codeKey] = item.value || ''
+    const index = store.wgForms.findIndex(v => v.key === item.key)
+    index > -1 ? store.wgForms.splice(index, 1, item) : store.wgForms.push(item)
+    if (item.apiKey) store.formData[item.apiKey] = item.value || ''
+    if (item.codeKey) store.formData[item.codeKey] = item.value || ''
     return {
-      formData: formData.value,
-      wgForms: wgForms.value,
+      formData: store.formData,
+      wgForms: store.wgForms,
       wgData: item
     }
   }
@@ -27,24 +27,24 @@ export function useWgFormList() {
   const useRemoveForm = (list: Record<string, any>[]) => {
     for (let index = 0; index < list.length; index++) {
       const item = list[index];
-      for (let formIndex = 0; formIndex < wgForms.value.length; formIndex++) {
-        const formItem = wgForms.value[formIndex];
+      for (let formIndex = 0; formIndex < store.wgForms.length; formIndex++) {
+        const formItem = store.wgForms[formIndex];
         if (formItem.key === item.key) {
-          wgForms.value.splice(formIndex, 1)
-          delete formData.value[formItem.apiKey]
-          delete formData.value[formItem.codeKey]
+          store.wgForms.splice(formIndex, 1)
+          delete store.formData[formItem.apiKey]
+          delete store.formData[formItem.codeKey]
         }
       }
     }
     return {
-      formData: formData.value,
-      wgForms: wgForms.value
+      formData: store.formData,
+      wgForms: store.wgForms
     }
   }
 
   return {
-    formData,
-    wgForms,
+    formData: store.formData,
+    wgForms: store.wgForms,
     useRemoveForm,
     useAddForm
   }
