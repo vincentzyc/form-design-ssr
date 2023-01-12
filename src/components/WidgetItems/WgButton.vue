@@ -9,9 +9,9 @@
 </template>
 
 <script lang="ts" setup>
-// import { handleSubmit } from "@/validate/index"
-import { formatStyle } from "@/utils/format/unit";
 // import { useStore } from '@/store'
+import { handleSubmit } from "@/composition/use-submit";
+import { formatStyle } from "@/utils/format/unit";
 import { useWgFormList } from "@/composition/use-wgform";
 import { TypesButton } from "./WgTypes";
 
@@ -19,7 +19,7 @@ const props = defineProps<{
   item: TypesButton;
 }>();
 
-const wgFormList = useWgFormList()
+const wgFormList = useWgFormList();
 
 const wrapStyle = () => {
   if (!props.item.animation) return formatStyle(props.item.style);
@@ -43,13 +43,12 @@ const wrapClass = () => {
 };
 
 const clickBtn = () => {
-  console.log(wgFormList.formData);
-  // switch (props.item.btnType) {
-  //   case 'submit':
-  //     handleSubmit(formData.value, wgForms.value)
-  //     break;
-  //   default:
-  //     break;
-  // }
+  switch (props.item.btnType) {
+    case "submit":
+      handleSubmit({ formData: wgFormList.formData, wgItem: props.item });
+      break;
+    default:
+      break;
+  }
 };
 </script>
