@@ -12,11 +12,14 @@
 // import { handleSubmit } from "@/validate/index"
 import { formatStyle } from "@/utils/format/unit";
 // import { useStore } from '@/store'
+import { useWgFormList } from "@/composition/use-wgform";
 import { TypesButton } from "./WgTypes";
 
 const props = defineProps<{
   item: TypesButton;
 }>();
+
+const wgFormList = useWgFormList()
 
 const wrapStyle = () => {
   if (!props.item.animation) return formatStyle(props.item.style);
@@ -40,7 +43,7 @@ const wrapClass = () => {
 };
 
 const clickBtn = () => {
-  console.log(123);
+  console.log(wgFormList.formData);
   // switch (props.item.btnType) {
   //   case 'submit':
   //     handleSubmit(formData.value, wgForms.value)
