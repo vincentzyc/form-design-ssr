@@ -9,8 +9,7 @@
 </template>
 
 <script lang="ts" setup>
-// import { useStore } from '@/store'
-import { handleSubmit } from "@/composition/use-submit";
+import { handleSubmit } from "@/validate/index";
 import { formatStyle } from "@/utils/format/unit";
 import { useWgFormList } from "@/composition/use-wgform";
 import { TypesButton } from "./WgTypes";
@@ -45,7 +44,7 @@ const wrapClass = () => {
 const clickBtn = () => {
   switch (props.item.btnType) {
     case "submit":
-      handleSubmit({ formData: wgFormList.formData, wgItem: props.item });
+      handleSubmit({ formData: wgFormList.formData, wgForms: wgFormList.wgForms, wgItem: props.item });
       break;
     default:
       break;
