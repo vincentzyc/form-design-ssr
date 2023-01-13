@@ -2,7 +2,11 @@ import { scrollIntoView } from '@/utils/dom';
 import { openLoading, closeLoading } from '@/utils/loading';
 import { showDialog, showToast } from 'vant';
 
-const ruleList = {
+interface TypeRuleList {
+  [key: string]: (...args: any[]) => true | string
+};
+
+const ruleList: TypeRuleList = {
   phone: (value: string) => {
     if (!value) return '请输入手机号';
     if (/^1[0-9]{10}$/.test(value)) return true;
