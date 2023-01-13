@@ -5,6 +5,11 @@ import { showDialog, showToast } from 'vant';
 interface TypeRuleList {
   [key: string]: (...args: any[]) => true | string
 };
+interface TypeSubmitAgrs {
+  formData: Record<string, any>,
+  wgForms: Record<string, any>[],
+  wgItem: Record<string, any>,
+}
 
 const ruleList: TypeRuleList = {
   phone: (value: string) => {
@@ -105,7 +110,8 @@ export function valiDate(obj: Record<string, any>): boolean | string {
   return ruleList[obj.apiKey](obj.value, obj)
 }
 
-export function handleSubmit(formData: Record<string, any>, wgForms: Record<string, any>[]) {
+export function handleSubmit(obj: TypeSubmitAgrs) {
+  const { formData, wgForms } = obj
   const valiDateRes = valiWgValue(formData, wgForms)
   if (valiDateRes !== true && valiDateRes !== false) return showToast(valiDateRes)
   submit(formData);
