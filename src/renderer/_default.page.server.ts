@@ -3,6 +3,7 @@ import { escapeInject, dangerouslySkipEscape } from 'vite-plugin-ssr'
 import { createApp } from './app'
 import logoUrl from './logo.svg'
 import type { PageContextServer } from './types'
+import baseCss from '../assets/css/base.min.css'
 
 export { render }
 // See https://vite-plugin-ssr.com/data-fetching
@@ -16,7 +17,6 @@ async function render(pageContext: PageContextServer) {
   const { documentProps } = pageContext.exports
   const getDocumentProps: any = pageContext.exports.getDocumentProps
   const dynamicInfo = (getDocumentProps && await getDocumentProps()) || { title: '', description: '' }
-  console.log(dynamicInfo)
   const title = (getDocumentProps && dynamicInfo.title) || (documentProps && documentProps.title) || 'Vite SSR app'
   const desc = (getDocumentProps && dynamicInfo.description) || (documentProps && documentProps.description) || 'App using Vite + vite-plugin-ssr'
 
@@ -28,7 +28,7 @@ async function render(pageContext: PageContextServer) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="${desc}" />
         <title>${title}</title>
-        <link rel="stylesheet" href="/src/renderer/base.css">
+        <style>${baseCss}</style>
         <script type="text/javascript">
         //简化压缩版 flexible.min.js ，根据实际情况决定是否使用
         !function(e,t){function n() {  var n = s.getBoundingClientRect().width;  t = t || 540, n > t && (n = t);  var i = 100 * n / e;  s.style.fontSize = i + "px"} var i, o = document,d = window,s = o.documentElement;n(), d.addEventListener("resize", function () { clearTimeout(i), i = setTimeout(n, 300) }, !1), d.addEventListener("pageshow", function (e) { e.persisted && (clearTimeout(i), i = setTimeout(n, 300)) }, !1), d.addEventListener("DOMContentLoaded", function () { o.body.style.position = "relative", o.body.style.fontSize = "14px", o.body.style.margin = "0 auto", o.body.style.maxWidth = t + "px" }, !1)
