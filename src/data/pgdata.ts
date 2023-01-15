@@ -224,7 +224,7 @@ export default {
       ],
       imglist: [{ img: "https://static.jetmobo.com/image/content-h5/20221125/1669333983504.jpg", link: "" }],
       style: { margin: "0px 0px 0px 0px" },
-      key: "ImgShow_1597832935582_347781",
+      key: "ImgShow_1597832935582_347666",
     },
     {
       type: "ImgShow",
@@ -239,7 +239,7 @@ export default {
       ],
       imglist: [{ img: "https://static.jetmobo.com/image/content-h5/20221125/1669333983504.jpg", link: "" }],
       style: { margin: "0px 0px 0px 0px" },
-      key: "ImgShow_1597832935582_347781",
+      key: "ImgShow_1597832935582_347777",
     },
     {
       type: "Button",
@@ -257,7 +257,7 @@ export default {
         value: "",
         btnStyle: { borderRadius: "20px", borderradius: 20, background: "#e64950", color: "#fff" },
       },
-      key: "Button_1577685028838_726439",
+      key: "Button_1577685028838_726888",
     },
   ],
   title: "云忆网络1",
