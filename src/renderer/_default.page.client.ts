@@ -1,6 +1,7 @@
 import { createApp } from './app'
 import type { PageContextClient } from './types'
 import 'vant/lib/index.css';
+import './logo.svg'
 import '../assets/css/main.css'
 import '../assets/css/widget.css'
 import '../assets/css/animte.css'
