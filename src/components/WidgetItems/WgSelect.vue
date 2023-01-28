@@ -1,14 +1,14 @@
 <template>
-  <div :class="wrapClass" style="{wgData.style}">
+  <div :class="wrapClass" :style="wgData.style">
     <div class="wg-title" v-show="wgData.showLabel" :style="{ width: changeRem(wgData.label.labelWidth) }"
-      >{wgData.label.labelTitle}</div
+      >{{wgData.label.labelTitle}}</div
     >
     <div class="flex-auto disabled-input" @click="openPicker">
       <input
         disabled
         :id="wgData.key"
         v-model="formData[wgData.apiKey]"
-        placeholder="{wgData.placeholder}"
+        :placeholder="wgData.placeholder"
         class="wg-input"
       />
       <i class="cubeic-select"></i>
