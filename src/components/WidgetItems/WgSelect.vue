@@ -20,7 +20,7 @@
 </template>
 
 <script lang="ts" setup>
-import { Picker, Popup } from "vant";
+import { Picker, Popup, PickerConfirmEventParams } from "vant";
 import { changeRem } from "@/utils/format/unit";
 import { useWgFormList } from "@/composition/use-wgform";
 import { TypesSelect } from "./WgTypes";
@@ -39,8 +39,9 @@ const openPicker = () => {
 const closePicker = () => {
   showPicker = false;
 };
-const onConfirm = (value: string) => {
-  formData[wgData.apiKey] = value;
+const onConfirm = (value: PickerConfirmEventParams) => {
+  console.log(value);
+  formData[wgData.apiKey] = value.selectedValues;
   closePicker();
 };
 </script>
