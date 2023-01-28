@@ -16,6 +16,7 @@ import WgPhone from "./WgPhone.vue";
 import WgRandomCode from "./WgRandomCode/index.vue";
 import WgInput from "./WgInput.vue";
 import WgSwitch from "./WgSwitch.vue";
+import WgSelect from "./WgSelect.vue";
 
 export default defineComponent({
   name: "WidgetItems",
@@ -29,7 +30,8 @@ export default defineComponent({
     WgPhone,
     WgRandomCode,
     WgInput,
-    WgSwitch
+    WgSwitch,
+    WgSelect
   },
 });
 </script>
