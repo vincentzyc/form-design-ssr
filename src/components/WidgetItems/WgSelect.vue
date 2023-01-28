@@ -1,8 +1,8 @@
 <template>
   <div :class="wrapClass" :style="wgData.style">
-    <div class="wg-title" v-show="wgData.showLabel" :style="{ width: changeRem(wgData.label.labelWidth) }"
-      >{{wgData.label.labelTitle}}</div
-    >
+    <div class="wg-title" v-show="wgData.showLabel" :style="{ width: changeRem(wgData.label.labelWidth) }">{{
+      wgData.label.labelTitle
+    }}</div>
     <div class="flex-auto disabled-input" @click="openPicker">
       <input
         disabled
@@ -13,14 +13,14 @@
       />
       <i class="cubeic-select"></i>
     </div>
-    <van-popup v-model:show="showPicker" round position="bottom">
+    <Popup v-model:show="showPicker" round position="bottom">
       <Picker show-toolbar :columns="wgData.options" @cancel="closePicker" @confirm="onConfirm" />
-    </van-popup>
+    </Popup>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { Picker } from "vant";
+import { Picker, Popup } from "vant";
 import { changeRem } from "@/utils/format/unit";
 import { useWgFormList } from "@/composition/use-wgform";
 import { TypesSelect } from "./WgTypes";
