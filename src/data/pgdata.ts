@@ -76,7 +76,12 @@ export default {
           showLabel: true,
           label: { labelTitle: "教育程度", labelPosition: "left", labelwidth: 66, labelWidth: "66px" },
           fieldTypes: "selectTypes",
-          options: ["硕士及以上", "本科", "大专", "中专/高中及以下"],
+          options: [
+            { text: "硕士及以上", value: "硕士及以上" },
+            { text: "本科", value: "本科" },
+            { text: "大专", value: "大专" },
+            { text: "中专/高中及以下", value: "中专/高中及以下" }
+          ],
           style: { margin: "0px 0px 0px 0px" },
           key: "Select_vRATQe-eBY3VMhtS3nr2U",
         },
