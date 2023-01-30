@@ -15,29 +15,32 @@ import widgetsData from "@/data/pgdata";
 // 动态设置
 
 async function getDocumentProps() {
-  await lazy()
+  await lazy();
   return {
     title: widgetsData.title,
-    description: '这是自定义的页面描述'
-  }
+    description: "这是自定义的页面描述",
+  };
 }
-async function lazy(){
-  return new Promise((resolve)=>{
+async function lazy(time=100) {
+  return new Promise(resolve => {
     setTimeout(() => {
-      resolve(true)
-    }, 100);
-  })
+      resolve(true);
+    }, time);
+  });
 }
-export { getDocumentProps }
-
+export { getDocumentProps };
 </script>
 
 <script lang="ts" setup>
 import { formatStyle } from "@/utils/format/unit";
 import RenderPage from "@cp/RenderPage.vue";
 
-const wgList = $ref(widgetsData.list);
-
+let wgList = $ref<typeof widgetsData.list>([]);
+async function getPageData() {
+  await lazy(300);
+  wgList = widgetsData.list;
+}
+getPageData()
 // console.log(pgdata)
 // import { usePageContext } from "../../renderer/usePageContext";
 

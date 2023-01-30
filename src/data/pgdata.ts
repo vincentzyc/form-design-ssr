@@ -169,7 +169,8 @@ export default {
       ],
       wgClassName: "wg-formlist",
       style: {
-        margin: "0px 20px 0px 20px",
+        margin: "0px 10px 0px 10px",
+        padding: "10px 10px 10px 10px",
         borderradius: 10,
         borderRadius: "10px",
         borderColor: "#E64950",
