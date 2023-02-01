@@ -17,6 +17,7 @@ import WgRandomCode from "./WgRandomCode/index.vue";
 import WgInput from "./WgInput.vue";
 import WgSwitch from "./WgSwitch.vue";
 import WgSelect from "./WgSelect.vue";
+import WgAgreement from "./WgAgreement/index.vue";
 
 export default defineComponent({
   name: "WidgetItems",
@@ -31,7 +32,8 @@ export default defineComponent({
     WgRandomCode,
     WgInput,
     WgSwitch,
-    WgSelect
+    WgSelect,
+    WgAgreement
   },
 });
 </script>
