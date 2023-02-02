@@ -126,8 +126,8 @@ export default {
           isRequired: true,
           tipText: "我已阅读并同意",
           titleTexts: [
-            { title: "《隐私权协议》", text: "" },
-            { title: "《用户协议》", text: "" },
+            { title: "《隐私权协议》", text: "隐私权协议" },
+            { title: "《用户协议》", text: "用户协议" },
           ],
           style: { fontsize: 12, fontSize: "12px", color: "#333333", margin: "10px 0px 10px 0px" },
           agreementColor: "#3b9cfd",
