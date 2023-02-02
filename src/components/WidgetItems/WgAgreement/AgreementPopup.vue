@@ -28,5 +28,5 @@ const close = () => {
   showAgreement = false;
   emit("close");
 };
-defineExpose(["open", "close"]);
+defineExpose({ open, close });
 </script>
