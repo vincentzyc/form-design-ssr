@@ -1,6 +1,18 @@
 export default {
   list: [
     {
+      type: "ImgSlide",
+      name: "图片轮播",
+      value: [
+        { url: "https://www.baidu.com", image: "static/img/theme1.jpg" },
+        { url: "https://qq.com", image: "static/img/theme2.jpg" },
+        { url: "https://jd.com", image: "static/img/theme3.jpg" },
+      ],
+      interval: 3000,
+      style: { margin: "0px 0px 0px 0px", height: 250 },
+      key: "ImgSlide_00X6XGfb7qz5moZAcLxDy",
+    },
+    {
       type: "ImgShow",
       name: "图片展示",
       positionFixed: "auto",
@@ -80,7 +92,7 @@ export default {
             { text: "硕士及以上", value: "硕士及以上" },
             { text: "本科", value: "本科" },
             { text: "大专", value: "大专" },
-            { text: "中专/高中及以下", value: "中专/高中及以下" }
+            { text: "中专/高中及以下", value: "中专/高中及以下" },
           ],
           style: { margin: "0px 0px 0px 0px" },
           key: "Select_vRATQe-eBY3VMhtS3nr2U",
