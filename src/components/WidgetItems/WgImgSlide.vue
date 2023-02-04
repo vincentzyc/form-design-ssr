@@ -4,7 +4,7 @@
       <Swipe :autoplay="item.interval" :style="slideContentStyle">
         <SwipeItem v-for="v in item.value">
           <a :href="v.url">
-            <img :src="v.image" width="100%" height="100%" />
+            <img :src="v.image" :style="{ width: '100%', height: '100%' }" />
           </a>
         </SwipeItem>
       </Swipe>
