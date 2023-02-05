@@ -20,6 +20,6 @@ import { TypesImgSlide } from "./WgTypes";
 const props = defineProps<{
   item: TypesImgSlide;
 }>();
-const wrapSlideStyle = { margin: props.item.style.margin },
-  slideContentStyle = { width: "100%", maxWidth: "640px", height: changeRem(props.item.style.height + "px") };
+const wrapSlideStyle = { margin: props.item.style.margin };
+const slideContentStyle = { width: "100%", maxWidth: "640px", height: changeRem(props.item.style.height + "px") };
 </script>
