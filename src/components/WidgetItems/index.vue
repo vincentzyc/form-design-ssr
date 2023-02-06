@@ -18,6 +18,7 @@ import WgInput from "./WgInput.vue";
 import WgSwitch from "./WgSwitch.vue";
 import WgSelect from "./WgSelect.vue";
 import WgAgreement from "./WgAgreement/index.vue";
+import WgImgSlide from "./WgImgSlide.vue";
 
 export default defineComponent({
   name: "WidgetItems",
@@ -33,7 +34,8 @@ export default defineComponent({
     WgInput,
     WgSwitch,
     WgSelect,
-    WgAgreement
+    WgAgreement,
+    WgImgSlide
   },
 });
 </script>
