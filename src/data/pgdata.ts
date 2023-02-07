@@ -4,7 +4,10 @@ export default {
       type: "ImgSlide",
       name: "图片轮播",
       value: [
-        { url: "https://www.baidu.com", image: "https://vincentzyc.github.io/form-design-next/static/img/theme1.jpg" },
+        {
+          url: "https://www.baidu.com",
+          image: "https://vincentzyc.github.io/form-design-next/static/img/theme1.jpg",
+        },
         { url: "https://qq.com", image: "https://vincentzyc.github.io/form-design-next/static/img/theme2.jpg" },
         { url: "https://jd.com", image: "https://vincentzyc.github.io/form-design-next/static/img/theme3.jpg" },
       ],
@@ -129,6 +132,18 @@ export default {
             },
           },
           key: "RandomCode_VI52pM-AR3Zzk4OWOuO-4",
+        },
+        {
+          type: "DatePicker",
+          name: "日期选择器",
+          label: { labelTitle: "生日", labelwidth: 66, labelWidth: "66px", labelPosition: "left" },
+          apiKey: "birthday",
+          value: "",
+          showLabel: true,
+          placeholder: "请选择日期",
+          fieldTypes: "dateTypes",
+          style: { margin: "0px 0px 0px 0px" },
+          key: "DatePicker_JtXYWd8kVXyJB-Vb4v5yA",
         },
         {
           type: "Agreement",
