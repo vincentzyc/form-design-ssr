@@ -13,7 +13,6 @@
 import { Popup } from "vant";
 import { textBr } from "@/utils/format/string";
 import { isLink } from "@/utils/validate/link";
-import "./css/style.css";
 
 const emit = defineEmits(["close"]);
 
