@@ -4,7 +4,7 @@
       <div class="wg-title" v-show="wgData.showLabel" :style="{ width: changeRem(wgData.label.labelWidth) }">{{
         wgData.label.labelTitle
       }}</div>
-      <div class="flex-auto disabled-input" @click="open">
+      <div class="flex-auto disabled-input" @click="open()">
         <input
           disabled
           :id="wgData.key"
