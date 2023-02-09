@@ -41,6 +41,8 @@ const props = defineProps<{
 const wgFormList = useWgFormList();
 const { wgData, formData } = wgFormList.useAddForm(props.item);
 
+const wrapClass = ["wg-item", wgData.label.labelPosition === "top" ? "flex-column" : "align-middle"];
+
 const minDate = new Date(1920, 0, 1);
 const maxDate = new Date(2120, 12, 31);
 
@@ -50,6 +52,7 @@ const currentMonth = currentTime.getMonth() + 1;
 const currentDay = currentTime.getDate();
 
 let showPicker = $ref(false);
+
 const currentDate = $ref([
   currentYear.toString(),
   (currentMonth < 10 ? "0" + currentMonth : currentMonth).toString(),
@@ -68,6 +71,4 @@ const confirm = (value: { selectedValues: string[] }) => {
   formData[wgData.apiKey] = value.selectedValues.join("-");
   close();
 };
-
-const wrapClass = ["wg-item", wgData.label.labelPosition === "top" ? "flex-column" : "align-middle"];
 </script>
