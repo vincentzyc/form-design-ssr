@@ -6,8 +6,17 @@ import type { PageContextServer } from './types'
 import baseCss from '../assets/css/base.min.css'
 
 export { render }
+export { onBeforeRender }
+
 // See https://vite-plugin-ssr.com/data-fetching
 export const passToClient = ['pageProps', 'urlPathname']
+
+async function onBeforeRender() {
+  // const data = await runQuery(query);
+  const data = await import('@/data/pgdata1');
+  const pageProps = { pgData: data.default, hehe: '牛逼' };
+  return { pageContext: { pageProps } };
+}
 
 async function render(pageContext: PageContextServer) {
   const app = createApp(pageContext)
