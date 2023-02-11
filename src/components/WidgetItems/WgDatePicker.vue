@@ -14,7 +14,7 @@
         />
       </div>
     </div>
-    <Popup position="bottom" v-model:show="showPicker" teleport="body">
+    <Popup position="bottom" v-model:show="showPicker">
       <DatePicker
         v-model="currentDate"
         type="date"
