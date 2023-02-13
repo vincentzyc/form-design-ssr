@@ -12,7 +12,6 @@ export { onBeforeRender }
 export const passToClient = ['pageProps', 'urlPathname']
 
 async function onBeforeRender() {
-  // const data = await runQuery(query);
   const data = await import('@/data/pgdata1');
   const pageProps = { pgData: data.default, hehe: '牛逼' };
   return { pageContext: { pageProps } };
