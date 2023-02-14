@@ -9,9 +9,10 @@ const pinia = createPinia()
 export { createApp }
 
 function createApp(pageContext: PageContext) {
-  const { Page, pageProps } = pageContext
+  const { Page } = pageContext
+  // const { Page, pageProps } = pageContext
   const app = createSSRApp({
-    render: () => h(Page, pageProps)
+    render: () => h(Page)
   })
   app.use(pinia)
   app.use(VueDOMPurifyHTML);
