@@ -1,0 +1,67 @@
+.wrapper {
+  background-color: #af0206;
+  min-height: 100vh;
+}
+.widthfull {
+  width: 100%;
+}
+.mg10 {
+  margin: 10px;
+}
+.mg-t10 {
+  margin-top: 10px;
+}
+.mg-b10 {
+  margin-bottom: 10px;
+}
+.agreement-text {
+  font-size: 12px;
+  color: #999;
+  line-height: 1.6;
+  font-weight: bold;
+}
+.agreement-title {
+  color: #ccc;
+}
+.breathlamp {
+  margin-top: 5px;
+  animation-name: animte-breathlamp;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.agreement-popup {
+  height: 86vh;
+  width: 90%;
+  border-radius: 10px;
+  padding-bottom: 41px;
+
+  .agreement-wrap {
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    white-space: break-spaces;
+    line-height: 1.6;
+  }
+
+  .agreement-text {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .agreement-confirm {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 14px;
+    color: #1989fa;
+    border-top: 1px solid #eee;
+    text-align: center;
+    line-height: 40px;
+  }
+}
+
+@import './animte.css';
