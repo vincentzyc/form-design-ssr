@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "form-design-ssr",
   "private": true,
   "scripts": {
     "build": "nuxt build",
@@ -11,6 +11,11 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@types/node": "^18.17.3",
-    "nuxt": "^3.6.5"
+    "@vant/nuxt": "^1.0.2",
+    "less": "^4.2.0",
+    "nuxt": "^3.6.5",
+    "axios": "^1.4.0",
+    "@pinia/nuxt": "^0.4.11",
+    "pinia": "^2.1.6"
   }
 }
