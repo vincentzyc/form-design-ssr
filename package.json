@@ -10,12 +10,12 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@pinia/nuxt": "^0.4.11",
     "@types/node": "^18.17.3",
     "@vant/nuxt": "^1.0.2",
-    "less": "^4.2.0",
-    "nuxt": "^3.6.5",
     "axios": "^1.4.0",
-    "@pinia/nuxt": "^0.4.11",
+    "less": "^4.2.0",
+    "nuxt": "^3.7.0",
     "pinia": "^2.1.6"
   }
 }
