@@ -43,27 +43,4 @@ export default defineComponent({
     };
   },
 });
-// 静态设置
-// export const documentProps = {
-//   title: widgetsData.title,
-//   description: '这是自定义的页面描述'
-// }
-
-// 动态设置
-
-// async function getDocumentProps() {
-//   await lazy();
-//   return {
-//     title: widgetsData.title,
-//     description: "这是自定义的页面描述",
-//   };
-// }
-// async function lazy(time = 100) {
-//   return new Promise(resolve => {
-//     setTimeout(() => {
-//       resolve(true);
-//     }, time);
-//   });
-// }
-// export { getDocumentProps };
 </script>
