@@ -4,8 +4,8 @@ type UrlParamBack = null | string | Record<string, any>;
  * 获取url参数值
  * @param {String} name 参数名称(不传则返回一个全部参数对象)
  */
-export function getUrlParam(name: string = ''): UrlParamBack {
-  const href = window.location.href,
+export function getUrlParam(name: string = '', newUrl: string): UrlParamBack {
+  const href = newUrl || window.location.href,
     i = href.indexOf('?');
   if (i < 0) return null;
   const str = href.slice(i);
@@ -22,12 +22,13 @@ export function getUrlParam(name: string = ''): UrlParamBack {
   if (name) return obj[name];
   return obj;
 }
+
 /**
  * 清除给定字符串中大括号内的内容。
  * @param {string} str - 输入字符串。
  * @return {object} 包含清除后的结果和一个 JSON 字符串对象的对象。
  */
-export function clearBracesContent(str: string): { result: string, jsonStrObj: object } {
+export function clearBracesContent(str: string): { result: string; jsonStrObj: object } {
   let result = '';
   let i = 0;
   let lastParameter = '';
