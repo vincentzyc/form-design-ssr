@@ -5,58 +5,54 @@ type UrlParamBack = null | string | Record<string, any>;
  * @param {String} name 参数名称(不传则返回一个全部参数对象)
  */
 export function getUrlParam(name: string = '', newUrl: string): UrlParamBack {
-  const href = newUrl || window.location.href,
-    i = href.indexOf('?');
-  if (i < 0) return null;
-  const str = href.slice(i);
-  if (!str) return null;
-  const arr = str.match(/([^?&=#]+)=([^?&=#/]*)/g);
-  if (!arr) return null;
-  const obj: UrlParamBack = {};
-  arr.forEach(v => {
-    const temp = v.split('=');
-    if (temp.length > 0) {
-      obj[temp[0]] = temp[1];
-    }
-  });
-  if (name) return obj[name];
-  return obj;
-}
-
-/**
- * 清除给定字符串中大括号内的内容。
- * @param {string} str - 输入字符串。
- * @return {object} 包含清除后的结果和一个 JSON 字符串对象的对象。
- */
-export function clearBracesContent(str: string): { result: string; jsonStrObj: object } {
-  let result = '';
   let i = 0;
-  let lastParameter = '';
-  let jsonStrObj: { [key: string]: string } = {};
-  while (i < str.length) {
+  let parameterName = '';
+  let parameterValue = '';
+  let paramObj: Record<string, any> = {};
+  const str = newUrl || window.location.href;
+  const strLength = str.length;
+  while (i < strLength) {
     const c = str.charAt(i);
-    if (c === '{') {
-      const closingBraceIndex = findClosingBrace(str, i);
-      const parameterName = lastParameter;
-      const clearedContent = `{}`;
-      const newIndex = closingBraceIndex + 1;
-      jsonStrObj[parameterName] = str.slice(i, newIndex);
-      i = newIndex;
-      result += clearedContent;
+    if (i === strLength - 1) {
+      let startValue = str.lastIndexOf('=', i);
+      if (parameterName && startValue > 0) {
+        parameterValue = str.slice(startValue + 1, i + 1);
+        paramObj[parameterName] = parameterValue;
+        parameterName = '';
+      }
+      i++;
+    } else if (c === '{') {
+      if (parameterName) {
+        const closingBraceIndex = findClosingBrace(str, i);
+        const newIndex = closingBraceIndex + 1;
+        parameterValue = str.slice(i, newIndex);
+        paramObj[parameterName] = parameterValue;
+        parameterName = '';
+        i = newIndex;
+      } else {
+        i++;
+      }
     } else if (c === '=') {
       let startParameter = str.lastIndexOf('&', i);
       if (startParameter < 0) startParameter = str.lastIndexOf('?', i);
-      lastParameter = str.slice(startParameter + 1, i);
-      result += c;
+      if (startParameter < 0) startParameter = str.lastIndexOf('#', i);
+      parameterName = str.slice(startParameter + 1, i);
+      i++;
+    } else if (c === '&') {
+      let startValue = str.lastIndexOf('=', i);
+      if (parameterName && startValue > 0) {
+        parameterValue = str.slice(startValue + 1, i);
+        paramObj[parameterName] = parameterValue;
+        parameterName = '';
+      }
       i++;
     } else {
-      result += c;
       i++;
     }
   }
-  return { result, jsonStrObj };
+  if (name) return paramObj[name] || '';
+  return paramObj;
 }
-
 /**
  * 在给定索引开始，查找字符串中闭合括号的索引。
  * @param {string} str - 要搜索的字符串。
