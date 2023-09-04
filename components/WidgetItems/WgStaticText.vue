@@ -1,13 +1,13 @@
 <template>
   <div class="wg-staticText clearfix" :style="domStyle">
-    <p :style="formatStyle(props.item.style)" @click="handleClick" v-dompurify-html="changeRem(props.item.value)"></p>
+    <p :style="formatStyle(props.item.style)" @click="handleClick">{{ props.item.value }}</p>
     <!-- <CustomPopup ref="elCustomPopup" :list="props.item.popupList || []" :show="props.item.showPopup" /> -->
   </div>
 </template>
 <script lang="ts" setup>
 import { changeRem, formatStyle } from "@/utils/format/unit";
 import { jumpLink } from "@/utils/validate/link";
-import CustomPopup from "./WgPopup/index.vue";
+// import CustomPopup from "./WgPopup/index.vue";
 import { TypesStaticText } from "./WgTypes";
 
 const props = defineProps<{
