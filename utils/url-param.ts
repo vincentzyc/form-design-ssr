@@ -2,8 +2,8 @@ type UrlParamBack = null | string | Record<string, any>;
 
 /**
  * 获取url参数值
- * @param {String} name 参数名称(不传则返回一个全部参数对象)
- * @param {String} newUrl 要处理的链接
+ * @param {String} name 参数名称，不传则返回一个全部参数对象
+ * @param {String} newUrl 要处理的链接，不传则默认当前浏览器链接
  */
 export function getUrlParam(name: string = '', newUrl: string): UrlParamBack {
   let parameterName = '';
