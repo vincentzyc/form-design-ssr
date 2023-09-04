@@ -1,14 +1,14 @@
 <template>
   <div class="wg-staticText clearfix" :style="domStyle">
-    <p :style="formatStyle(props.item.style)" @click="handleClick">{{ props.item.value }}</p>
+    <p :style="formatStyle(props.item.style)" @click="handleClick" v-html="props.item.value"></p>
     <!-- <CustomPopup ref="elCustomPopup" :list="props.item.popupList || []" :show="props.item.showPopup" /> -->
   </div>
 </template>
 <script lang="ts" setup>
-import { changeRem, formatStyle } from "@/utils/format/unit";
-import { jumpLink } from "@/utils/validate/link";
+import { formatStyle } from '@/utils/format/unit';
+import { jumpLink } from '@/utils/validate/link';
 // import CustomPopup from "./WgPopup/index.vue";
-import { TypesStaticText } from "./WgTypes";
+import { TypesStaticText } from './WgTypes';
 
 const props = defineProps<{
   item: TypesStaticText;
@@ -16,8 +16,8 @@ const props = defineProps<{
 
 // const elCustomPopup = ref<typeof CustomPopup>();
 const domStyle = {
-  backgroundColor: props.item.backgroundColor || "",
-  backgroundImage: props.item.backgroundImage ? `url(${props.item.backgroundImage})` : "",
+  backgroundColor: props.item.backgroundColor || '',
+  backgroundImage: props.item.backgroundImage ? `url(${props.item.backgroundImage})` : '',
 };
 const handleClick = () => {
   if (props.item.link) return jumpLink(props.item.link);
