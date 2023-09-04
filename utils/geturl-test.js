@@ -60,7 +60,7 @@ function findClosingBrace(str, startIndex) {
   return i - 1;
 }
 
-const url = `http://test-cms.jetmobo.com/h5/index.html#haha?id=8999357689071467516&abtest=1&pid=48075&ogpid=48075&toutiao_card_params={\"external_url\":\"https://h5.junjue888.com/h5/index.html?id=9467741690971614777&pid=103044&adP={\"aadd\":\"ddaa\"}\",\"name\":\"\"}&ad_params={\"id\":\"001\"}&toutiao_param={\"nno\":\"asdad\"}&shuntPid=1234`;
+const url = `http://test-cms.jetmobo.com/h5/index.html#haha?id=8999357689071467516&abtest=1&pid=48075&ogpid=48075_66880&toutiao_card_params={\"external_url\":\"https://h5.junjue888.com/h5/index.html?id=9467741690971614777&pid=103044&adP={\"aadd\":\"ddaa\"}\",\"name\":\"\"}&ad_params={\"id\":\"001\"}&toutiao_param={\"nno\":\"asdad\"}&shuntPid=1234`;
 const res = getUrlParam(url);
 console.log(res);
 
