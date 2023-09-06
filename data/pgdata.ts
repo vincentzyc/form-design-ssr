@@ -211,7 +211,7 @@ export default {
       type: "StaticText",
       name: "文本描述",
       value: "<p style='font-size:36px'>主题一</p>",
-      link: "",
+      link: "https://www.baidu.com/",
       backgroundImage: "",
       style: { textAlign: "center", fontsize: 14, fontSize: "14px", color: "#333333", margin: "10px 10px 10px 10px" },
       key: "StaticText_1568799421345_855582",
