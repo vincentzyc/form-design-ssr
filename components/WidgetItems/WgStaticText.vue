@@ -1,6 +1,6 @@
 <template>
   <div class="wg-staticText clearfix" :style="domStyle">
-    <p :style="formatStyle(props.item.style)" @click="handleClick" v-html="props.item.value"></p>
+    <div :style="formatStyle(props.item.style)" @click="handleClick" v-html="props.item.value"></div>
     <!-- <CustomPopup ref="elCustomPopup" :list="props.item.popupList || []" :show="props.item.showPopup" /> -->
   </div>
 </template>
