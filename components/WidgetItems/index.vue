@@ -10,7 +10,7 @@ import { defineComponent } from "vue";
 // import WgImgShow from "./WgImgShow.vue";
 // import WgSplitLine from "./WgSplitLine.vue";
 import WgStaticText from "./WgStaticText.vue";
-// import WgCountDown from "./WgCountDown.vue";
+import WgCountDown from "./WgCountDown.vue";
 // import WgButton from "./WgButton.vue";
 // import WgPhone from "./WgPhone.vue";
 // import WgRandomCode from "./WgRandomCode/index.vue";
@@ -28,7 +28,7 @@ export default defineComponent({
     // WgImgShow,
     // WgSplitLine,
     WgStaticText,
-    // WgCountDown,
+    WgCountDown,
     // WgButton,
     // WgPhone,
     // WgRandomCode,
