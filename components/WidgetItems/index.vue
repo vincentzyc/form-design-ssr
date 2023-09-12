@@ -8,7 +8,7 @@
 import { defineComponent } from "vue";
 // import WgChildList from "./WgChildList.vue";
 // import WgImgShow from "./WgImgShow.vue";
-// import WgSplitLine from "./WgSplitLine.vue";
+import WgSplitLine from "./WgSplitLine.vue";
 import WgStaticText from "./WgStaticText.vue";
 import WgCountDown from "./WgCountDown.vue";
 // import WgButton from "./WgButton.vue";
@@ -26,7 +26,7 @@ export default defineComponent({
   components: {
     // WgChildList,
     // WgImgShow,
-    // WgSplitLine,
+    WgSplitLine,
     WgStaticText,
     WgCountDown,
     // WgButton,
