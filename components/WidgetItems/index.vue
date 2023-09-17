@@ -14,7 +14,7 @@ import WgCountDown from "./WgCountDown.vue";
 // import WgButton from "./WgButton.vue";
 // import WgPhone from "./WgPhone.vue";
 // import WgRandomCode from "./WgRandomCode/index.vue";
-// import WgInput from "./WgInput.vue";
+import WgInput from "./WgInput.vue";
 // import WgSwitch from "./WgSwitch.vue";
 // import WgSelect from "./WgSelect.vue";
 // import WgAgreement from "./WgAgreement/index.vue";
@@ -32,7 +32,7 @@ export default defineComponent({
     // WgButton,
     // WgPhone,
     // WgRandomCode,
-    // WgInput,
+    WgInput,
     // WgSwitch,
     // WgSelect,
     // WgAgreement,
