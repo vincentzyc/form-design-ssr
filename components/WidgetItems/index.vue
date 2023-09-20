@@ -18,7 +18,7 @@ import WgInput from "./WgInput.vue";
 // import WgSwitch from "./WgSwitch.vue";
 // import WgSelect from "./WgSelect.vue";
 // import WgAgreement from "./WgAgreement/index.vue";
-// import WgImgSlide from "./WgImgSlide.vue";
+import WgImgSlide from "./WgImgSlide.vue";
 // import WgDatePicker from "./WgDatePicker.vue";
 
 export default defineComponent({
@@ -36,7 +36,7 @@ export default defineComponent({
     // WgSwitch,
     // WgSelect,
     // WgAgreement,
-    // WgImgSlide,
+    WgImgSlide,
     // WgDatePicker
   },
 });
