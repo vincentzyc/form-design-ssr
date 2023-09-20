@@ -1,20 +1,19 @@
 <template>
   <div class="wg-imgslide">
     <div :style="item.style">
-      <Swipe :autoplay="item.interval" :style="slideContentStyle">
-        <SwipeItem v-for="v in item.value">
+      <VanSwipe :autoplay="item.interval" :style="slideContentStyle">
+        <VanSwipeItem v-for="v in item.value">
           <a :href="v.url">
             <img :src="v.image" :style="{ width: '100%', height: '100%' }" />
           </a>
-        </SwipeItem>
-      </Swipe>
+        </VanSwipeItem>
+      </VanSwipe>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { changeRem } from "@/utils/format/unit";
-import { Swipe, SwipeItem } from "vant";
 import { TypesImgSlide } from "./WgTypes";
 
 const props = defineProps<{
