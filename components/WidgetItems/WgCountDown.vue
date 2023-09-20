@@ -2,7 +2,7 @@
   <div :style="formatStyle(getStyle)" class="wg-countdown" v-if="!isFinished">
     <div class="flex flex-center">
       <span class="countdown-title">{{ item.title }}</span>
-      <CountDown :time="endTime" @finish="finished" class="flex-inline align-middle">
+      <VanCountDown :time="endTime" @finish="finished" class="flex-inline align-middle">
         <template #default="timeData">
           <div v-if="showCountDown">
             <span :style="formatStyle(item.timeStyle)" class="countdown-timeblock" v-if="timeData.days > 0">{{
@@ -39,14 +39,13 @@
             <span :style="formatStyle(item.unitStyle)" class="countdown-colon">秒</span>
           </div>
         </template>
-      </CountDown>
+      </VanCountDown>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { formatStyle } from "@/utils/format/unit";
-import { CountDown } from "vant";
 import { nextTick, onMounted } from "vue";
 import { TypesCountDown } from "./WgTypes";
 
