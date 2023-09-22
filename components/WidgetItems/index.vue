@@ -7,7 +7,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 // import WgChildList from "./WgChildList.vue";
-// import WgImgShow from "./WgImgShow.vue";
+import WgImgShow from "./WgImgShow.vue";
 import WgSplitLine from "./WgSplitLine.vue";
 import WgStaticText from "./WgStaticText.vue";
 import WgCountDown from "./WgCountDown.vue";
@@ -25,7 +25,7 @@ export default defineComponent({
   name: "WidgetItems",
   components: {
     // WgChildList,
-    // WgImgShow,
+    WgImgShow,
     WgSplitLine,
     WgStaticText,
     WgCountDown,
