@@ -26,7 +26,7 @@ export default {
         { value: "col1", label: "单列" },
         { value: "col2", label: "双列" },
       ],
-      imglist: [{ img: "https://static.jetmobo.com/image/content-h5/20221125/1669333983504.jpg", link: "" }],
+      imglist: [{ img: "https://static.jetmobo.com/image/content-h5/20230919/1695091663547.png", link: "" }],
       style: { margin: "0px 0px 0px 0px" },
       key: "ImgShow_1597832935582_347781",
     },
