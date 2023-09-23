@@ -37,7 +37,7 @@ export function initScript(jscode: string, scriptid: string): void {
  * 滑动到底部
  */
 export function easeBottom(): void {
-  let position = window.scrollY || window.pageYOffset;
+  let position = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
   const destination = document.documentElement.offsetHeight - document.documentElement.clientHeight;
   // 不存在原生`requestAnimationFrame`，用`setTimeout`模拟替代
   if (!window.requestAnimationFrame) {
