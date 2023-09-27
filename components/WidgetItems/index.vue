@@ -11,7 +11,7 @@ import WgImgShow from "./WgImgShow.vue";
 import WgSplitLine from "./WgSplitLine.vue";
 import WgStaticText from "./WgStaticText.vue";
 import WgCountDown from "./WgCountDown.vue";
-// import WgButton from "./WgButton.vue";
+import WgButton from "./WgButton.vue";
 // import WgPhone from "./WgPhone.vue";
 // import WgRandomCode from "./WgRandomCode/index.vue";
 import WgInput from "./WgInput.vue";
@@ -29,7 +29,7 @@ export default defineComponent({
     WgSplitLine,
     WgStaticText,
     WgCountDown,
-    // WgButton,
+    WgButton,
     // WgPhone,
     // WgRandomCode,
     WgInput,
