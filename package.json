@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev --host",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -15,7 +15,7 @@
     "@vant/nuxt": "^1.0.2",
     "axios": "^1.4.0",
     "less": "^4.2.0",
-    "nuxt": "^3.7.0",
+    "nuxt": "^3.7.4",
     "pinia": "^2.1.6"
   }
 }
