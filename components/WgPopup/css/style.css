@@ -1,0 +1,19 @@
+.custom-popup {
+  max-height: 86vh !important;
+  width: 90% !important;
+  border-radius: 10px;
+}
+
+.custom-popup .popup-wrap {
+  padding: 10px;
+  max-height: 86vh !important;
+  overflow-y: scroll;
+}
+
+.custom-popup .close-icon {
+  position: absolute;
+  right: 0px;
+  top: -35px;
+  width: 25px;
+  height: 25px;
+}
