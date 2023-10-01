@@ -3,11 +3,11 @@ import { scrollIntoView } from '@/utils/dom';
 interface TypeRuleList {
   [key: string]: (...args: any[]) => true | string
 };
-interface TypeSubmitAgrs {
-  formData: Record<string, any>,
-  wgForms: Record<string, any>[],
-  wgItem: Record<string, any>,
-}
+// interface TypeSubmitAgrs {
+//   formData: Record<string, any>,
+//   wgForms: Record<string, any>[],
+//   wgItem: Record<string, any>,
+// }
 
 const ruleList: TypeRuleList = {
   phone: (value: string) => {
