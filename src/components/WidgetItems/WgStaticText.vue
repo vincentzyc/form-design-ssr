@@ -1,7 +1,7 @@
 <template>
   <div class="wg-staticText clearfix" :style="domStyle">
     <p :style="formatStyle(props.item.style)" @click="handleClick" v-dompurify-html="changeRem(props.item.value)"></p>
-    <CustomPopup ref="elCustomPopup" :list="props.item.popupList || []" :show="props.item.showPopup" />
+    <CustomPopup ref="elCustomPopup" :list="props.item.popupList || []" :parentsWg="item" :show="props.item.showPopup" />
   </div>
 </template>
 <script lang="ts" setup>
@@ -14,7 +14,7 @@ const props = defineProps<{
   item: TypesStaticText;
 }>();
 
-const elCustomPopup = $ref<typeof CustomPopup>();
+const elCustomPopup = ref<typeof CustomPopup>();
 const domStyle = {
   backgroundColor: props.item.backgroundColor || "",
   backgroundImage: props.item.backgroundImage ? `url(${props.item.backgroundImage})` : "",
@@ -22,7 +22,7 @@ const domStyle = {
 const handleClick = () => {
   if (props.item.link) return jumpLink(props.item.link);
   if (props.item.popupList?.length > 0) {
-    elCustomPopup && elCustomPopup.open();
+    elCustomPopup.value && elCustomPopup.value.open();
   }
 };
 </script>
