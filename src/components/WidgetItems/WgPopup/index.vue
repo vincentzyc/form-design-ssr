@@ -6,16 +6,17 @@
         fill="#ffffff"
       ></path>
     </svg>
-    <div class="popup-wrap"> <WidgetItems :item="item" v-for="item in props.list" /> </div>
+    <div class="popup-wrap"> <WidgetItems :item="item" :parentsWg="parentsWg" v-for="item in props.list" /> </div>
   </Popup>
 </template>
 <script lang="ts" setup>
-import WidgetItems from "@cp/WidgetItems/index.vue";
-import { Popup } from "vant";
-import "./css/style.css";
+import WidgetItems from '@cp/WidgetItems/index.vue';
+import { Popup } from 'vant';
+import './css/style.css';
 
 interface Props {
   list: Record<string, any>[];
+  parentsWg: Record<string, any>;
   show: boolean;
 }
 const props = withDefaults(defineProps<Props>(), {
@@ -24,14 +25,14 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const emit = defineEmits<{
-  (e: "update:show", bool: boolean): void;
+  (e: 'update:show', bool: boolean): void;
 }>();
 
 const close = () => {
-  emit("update:show", false);
+  emit('update:show', false);
 };
 const open = () => {
-  emit("update:show", true);
+  emit('update:show', true);
 };
 
 defineExpose({ open, close });
