@@ -24,14 +24,11 @@
 
 <script lang="ts" setup>
 import { changeRem } from "@/utils/format/unit";
-// import { useWgFormList } from "@/composition/use-wgform";
 import { TypesInput } from "./WgTypes";
 
 const props = defineProps<{
   item: TypesInput;
 }>();
 
-// const wgFormList = useWgFormList();
-// const { wgData, formData } = wgFormList.useAddForm(props.item);
 const wrapClass = ["wg-item", props.item.label.labelPosition === "top" ? "flex-column" : "align-middle"];
 </script>
