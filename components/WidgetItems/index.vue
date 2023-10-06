@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-// import WgChildList from "./WgChildList.vue";
+import WgChildList from "./WgChildList.vue";
 import WgImgShow from "./WgImgShow.vue";
 import WgSplitLine from "./WgSplitLine.vue";
 import WgStaticText from "./WgStaticText.vue";
@@ -24,7 +24,7 @@ import WgImgSlide from "./WgImgSlide.vue";
 export default defineComponent({
   name: "WidgetItems",
   components: {
-    // WgChildList,
+    WgChildList,
     WgImgShow,
     WgSplitLine,
     WgStaticText,
@@ -49,7 +49,7 @@ interface Props {
 }
 const props = withDefaults(defineProps<Props>(), {
   item: () => ({}),
-  parentsWg: () => ({ type: "window" }),
+  parentsWg: () => ({}),
 });
 
 const wgViewStyle = computed(() => {
@@ -62,4 +62,8 @@ const wgViewStyle = computed(() => {
   return {};
 });
 const wgViewClass = computed(() => (props.item.wgClassName ? props.item.wgClassName : "widget-view"));
+
+props.item.paths = props.parentsWg.paths ? [props.item.key, ...props.parentsWg.paths] : [props.item.key];
+
+console.log(props.item.paths)
 </script>
