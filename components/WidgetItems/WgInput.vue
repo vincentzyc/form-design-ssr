@@ -1,22 +1,22 @@
 <template>
-  <div :class="wrapClass" :style="item.style">
-    <div class="wg-title" v-show="item.showLabel" :style="{ width: changeRem(item.label.labelWidth) }">{{
-      item.label.labelTitle
+  <div :class="wrapClass" :style="props.item.style">
+    <div class="wg-title" v-show="props.item.showLabel" :style="{ width: changeRem(props.item.label.labelWidth) }">{{
+      props.item.label.labelTitle
     }}</div>
     <div class="flex-auto">
       <textarea
-        v-if="item.isTextarea"
-        v-model="item.value"
-        :placeholder="item.placeholder"
+        v-if="props.item.isTextarea"
+        v-model="props.item.value"
+        :placeholder="props.item.placeholder"
         class="wg-textarea"
-        :id="item.key"
+        :id="props.item.key"
       />
       <input
         v-else
-        v-model="item.value"
-        :placeholder="item.placeholder"
+        v-model="props.item.value"
+        :placeholder="props.item.placeholder"
         class="wg-input"
-        :id="item.key"
+        :id="props.item.key"
       />
     </div>
   </div>
