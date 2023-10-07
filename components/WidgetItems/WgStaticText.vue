@@ -1,7 +1,7 @@
 <template>
   <div class="wg-staticText clearfix" :style="domStyle">
     <div :style="formatStyle(props.item.style)" @click="handleClick" v-html="props.item.value"></div>
-    <CustomPopup ref="elCustomPopup" :list="props.item.popupList || []" :parentsWg="item" v-model:show="showPopup" />
+    <CustomPopup ref="elCustomPopup" :list="props.item.popupList || []" :parentsWg="props.item" v-model:show="showPopup" />
   </div>
 </template>
 <script lang="ts" setup>
