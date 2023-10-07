@@ -9,7 +9,6 @@
 </template>
 
 <script lang="ts" setup>
-// import { useWgFormList } from "@/composition/use-wgform";
 import { changeRem } from "@/utils/format/unit";
 import { TypesSwitch } from "./WgTypes";
 
@@ -17,7 +16,5 @@ const props = defineProps<{
   item: TypesSwitch;
 }>();
 
-// const wgFormList = useWgFormList();
-// const { wgData, formData } = wgFormList.useAddForm(props.item);
 const wrapClass = ["wg-item", "wg-switch", props.item.label.labelPosition === "top" ? "flex-column" : "align-middle"];
 </script>
