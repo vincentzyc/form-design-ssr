@@ -5,24 +5,24 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import WgChildList from "./WgChildList.vue";
-import WgImgShow from "./WgImgShow.vue";
-import WgSplitLine from "./WgSplitLine.vue";
-import WgStaticText from "./WgStaticText.vue";
-import WgCountDown from "./WgCountDown.vue";
-import WgButton from "./WgButton.vue";
+import { defineComponent } from 'vue';
+import WgChildList from './WgChildList.vue';
+import WgImgShow from './WgImgShow.vue';
+import WgSplitLine from './WgSplitLine.vue';
+import WgStaticText from './WgStaticText.vue';
+import WgCountDown from './WgCountDown.vue';
+import WgButton from './WgButton.vue';
 // import WgPhone from "./WgPhone.vue";
 // import WgRandomCode from "./WgRandomCode/index.vue";
-import WgInput from "./WgInput.vue";
+import WgInput from './WgInput.vue';
 // import WgSwitch from "./WgSwitch.vue";
 // import WgSelect from "./WgSelect.vue";
 // import WgAgreement from "./WgAgreement/index.vue";
-import WgImgSlide from "./WgImgSlide.vue";
+import WgImgSlide from './WgImgSlide.vue';
 // import WgDatePicker from "./WgDatePicker.vue";
 
 export default defineComponent({
-  name: "WidgetItems",
+  name: 'WidgetItems',
   components: {
     WgChildList,
     WgImgShow,
@@ -61,9 +61,7 @@ const wgViewStyle = computed(() => {
   }
   return {};
 });
-const wgViewClass = computed(() => (props.item.wgClassName ? props.item.wgClassName : "widget-view"));
+const wgViewClass = computed(() => (props.item.wgClassName ? props.item.wgClassName : 'widget-view'));
 
 props.item.paths = props.parentsWg.paths ? [props.item.key, ...props.parentsWg.paths] : [props.item.key];
-
-console.log(props.item.paths)
 </script>
