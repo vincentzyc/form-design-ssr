@@ -1,42 +1,42 @@
 <template>
   <div :style="formatStyle(getStyle)" class="wg-countdown" v-if="!isFinished">
     <div class="flex flex-center">
-      <span class="countdown-title">{{ item.title }}</span>
+      <span class="countdown-title">{{ props.item.title }}</span>
       <VanCountDown :time="endTime" @finish="finished" class="flex-inline align-middle">
         <template #default="timeData">
           <div v-if="showCountDown">
-            <span :style="formatStyle(item.timeStyle)" class="countdown-timeblock" v-if="timeData.days > 0">{{
+            <span :style="formatStyle(props.item.timeStyle)" class="countdown-timeblock" v-if="timeData.days > 0">{{
               timeData.days
             }}</span>
-            <span :style="formatStyle(item.unitStyle)" class="countdown-colon" v-if="timeData.days > 0">天</span>
+            <span :style="formatStyle(props.item.unitStyle)" class="countdown-colon" v-if="timeData.days > 0">天</span>
             <span
-              :style="formatStyle(item.timeStyle)"
+              :style="formatStyle(props.item.timeStyle)"
               class="countdown-timeblock"
               v-if="timeData.days > 0 || timeData.hours > 0"
               >{{ formatNumber(timeData.hours) }}</span
             >
             <span
-              :style="formatStyle(item.unitStyle)"
+              :style="formatStyle(props.item.unitStyle)"
               class="countdown-colon"
               v-if="timeData.days > 0 || timeData.hours > 0"
               >时</span
             >
             <span
-              :style="formatStyle(item.timeStyle)"
+              :style="formatStyle(props.item.timeStyle)"
               class="countdown-timeblock"
               v-if="timeData.days > 0 || timeData.hours > 0 || timeData.minutes > 0"
               >{{ formatNumber(timeData.minutes) }}</span
             >
             <span
-              :style="formatStyle(item.unitStyle)"
+              :style="formatStyle(props.item.unitStyle)"
               class="countdown-colon"
               v-if="timeData.days > 0 || timeData.hours > 0 || timeData.minutes > 0"
               >分</span
             >
-            <span :style="formatStyle(item.timeStyle)" class="countdown-timeblock">
+            <span :style="formatStyle(props.item.timeStyle)" class="countdown-timeblock">
               {{ formatNumber(timeData.seconds) }}</span
             >
-            <span :style="formatStyle(item.unitStyle)" class="countdown-colon">秒</span>
+            <span :style="formatStyle(props.item.unitStyle)" class="countdown-colon">秒</span>
           </div>
         </template>
       </VanCountDown>
