@@ -1,5 +1,3 @@
-import { PickerColumn } from "vant";
-
 export interface TypesSelect {
   key: string,
   type: string, // "Select",
@@ -15,7 +13,7 @@ export interface TypesSelect {
     labelWidth: string, //  "66px"
   },
   fieldTypes: string, //  "selectTypes",
-  options: PickerColumn, // ["硕士及以上","本科","大专","中专/高中及以下"],
+  options: string[], // ["硕士及以上","本科","大专","中专/高中及以下"],
   style: {
     margin: string, //  "0px 0px 0px 0px"
   }
