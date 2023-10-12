@@ -13,7 +13,7 @@ import WgStaticText from './WgStaticText.vue';
 import WgCountDown from './WgCountDown.vue';
 import WgButton from './WgButton.vue';
 // import WgPhone from "./WgPhone.vue";
-// import WgRandomCode from "./WgRandomCode/index.vue";
+import WgRandomCode from "./WgRandomCode/index.vue";
 import WgInput from './WgInput.vue';
 import WgSwitch from "./WgSwitch.vue";
 // import WgSelect from "./WgSelect.vue";
@@ -31,7 +31,7 @@ export default defineComponent({
     WgCountDown,
     WgButton,
     // WgPhone,
-    // WgRandomCode,
+    WgRandomCode,
     WgInput,
     WgSwitch,
     // WgSelect,
@@ -65,3 +65,4 @@ const wgViewClass = computed(() => (props.item.wgClassName ? props.item.wgClassN
 
 props.item.paths = props.parentsWg.paths ? [props.item.key, ...props.parentsWg.paths] : [props.item.key];
 </script>
+./WgRandomCode/index111
