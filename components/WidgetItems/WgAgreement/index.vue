@@ -1,6 +1,6 @@
 <template>
   <div class="wg-agreement clearfix wg-padding" :id="props.item.key">
-    <Checkbox v-model="formData[props.item.apiKey]" :style="formatStyle(props.item.style)" shape="square">
+    <VanCheckbox v-model="props.item.value" :style="formatStyle(props.item.style)" shape="square">
       <p :style="{ margin: 0, color: props.item.style.color }">
         <span>{{ props.item.tipText }}</span>
         <span v-for="(titleText, key) in props.item.titleTexts">
@@ -13,14 +13,13 @@
           >
         </span>
       </p>
-    </Checkbox>
+    </VanCheckbox>
     <AgreementPopup ref="elAgreement" />
   </div>
 </template>
 
 <script lang="ts" setup>
 import { formatStyle } from "@/utils/format/unit";
-import { Checkbox } from "vant";
 import AgreementPopup from "./AgreementPopup.vue";
 // import { useWgFormList } from "@/composition/use-wgform";
 import { TypesAgreement } from "../WgTypes";
