@@ -16,8 +16,8 @@ import WgButton from './WgButton.vue';
 import WgRandomCode from "./WgRandomCode/index.vue";
 import WgInput from './WgInput.vue';
 import WgSwitch from "./WgSwitch.vue";
-// import WgSelect from "./WgSelect.vue";
-// import WgAgreement from "./WgAgreement/index.vue";
+import WgSelect from "./WgSelect.vue";
+import WgAgreement from "./WgAgreement/index.vue";
 import WgImgSlide from './WgImgSlide.vue';
 // import WgDatePicker from "./WgDatePicker.vue";
 
@@ -34,8 +34,8 @@ export default defineComponent({
     WgRandomCode,
     WgInput,
     WgSwitch,
-    // WgSelect,
-    // WgAgreement,
+    WgSelect,
+    WgAgreement,
     WgImgSlide,
     // WgDatePicker
   },
