@@ -6,7 +6,7 @@
       }}</div>
       <div class="flex-auto disabled-input" @click="open()">
         <input
-          disabled
+          readonly
           :id="props.item.key"
           v-model="props.item.value"
           :placeholder="props.item.placeholder"
@@ -14,8 +14,8 @@
         />
       </div>
     </div>
-    <Popup position="bottom" v-model:show="showPicker">
-      <DatePicker
+    <VanPopup position="bottom" v-model:show="showPicker">
+      <VanDatePicker
         v-model="currentDate"
         type="date"
         title="选择年月日"
@@ -24,12 +24,11 @@
         @cancel="cancel"
         @confirm="confirm"
       />
-    </Popup>
+    </VanPopup>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { Popup, DatePicker } from "vant";
 import { changeRem, formatStyle } from "@/utils/format/unit";
 // import { useWgFormList } from "@/composition/use-wgform";
 import { TypesDatePicker } from "./WgTypes";
@@ -68,7 +67,9 @@ const cancel = () => {
 };
 
 const confirm = (value: { selectedValues: string[] }) => {
-  console.log(value)
+  const strDate = value.selectedValues.join("-")
+  props.item.value = strDate
+  console.log(strDate)
   // formData[props.item.apiKey] = value.selectedValues.join("-");
   close();
 };

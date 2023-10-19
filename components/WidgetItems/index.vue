@@ -19,7 +19,7 @@ import WgSwitch from "./WgSwitch.vue";
 import WgSelect from "./WgSelect.vue";
 import WgAgreement from "./WgAgreement/index.vue";
 import WgImgSlide from './WgImgSlide.vue';
-// import WgDatePicker from "./WgDatePicker.vue";
+import WgDatePicker from "./WgDatePicker.vue";
 
 export default defineComponent({
   name: 'WidgetItems',
@@ -37,7 +37,7 @@ export default defineComponent({
     WgSelect,
     WgAgreement,
     WgImgSlide,
-    // WgDatePicker
+    WgDatePicker
   },
 });
 </script>
