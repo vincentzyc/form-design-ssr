@@ -65,4 +65,3 @@ const wgViewClass = computed(() => (props.item.wgClassName ? props.item.wgClassN
 
 props.item.paths = props.parentsWg.paths ? [props.item.key, ...props.parentsWg.paths] : [props.item.key];
 </script>
-./WgRandomCode/index111

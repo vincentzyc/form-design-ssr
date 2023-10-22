@@ -30,7 +30,7 @@
 <script lang="ts" setup>
 import { changeRem, formatStyle } from "@/utils/format/unit";
 import { TypesPhone } from "./WgTypes";
-import ValidateCodeBtn from '@cp/ValidateCodeBtn/index.vue'
+import ValidateCodeBtn from '@/ValidateCodeBtn/index.vue'
 // import { useWgFormList } from "@/composition/use-wgform";
 
 const props = defineProps<{
@@ -44,4 +44,5 @@ const props = defineProps<{
 const phoneClass = ["wg-item", props.item.label.labelPosition === "top" ? "flex-column" : "align-middle"];
 
 const codeClass = ["wg-item", props.item.label.labelPosition === "top" ? "flex-column" : "align-middle"];
+
 </script>
