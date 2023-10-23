@@ -4,14 +4,7 @@
 
 <script lang="ts" setup>
 import "./style.css";
-import { showToast, showLoadingToast, closeToast } from "vant";
-
-// showLoadingToast({
-//   message: "加载中...",
-//   forbidClick: true,
-// });
-
-// // import { getVerifyCode } from '@/api';
+import { showToast, closeToast } from "vant";
 
 const props = defineProps<{
   phone: string;
@@ -21,12 +14,12 @@ let codetxt = ref("获取验证码");
 let showTime = ref<string | number>();
 let disbtn = ref(false);
 
-// /**
-//  * 倒计时
-//  * @param {Number} time  倒计时秒数
-//  * @param {Function} tickFunc  每秒回调
-//  * @param {Function} done     结束后回调
-//  */
+/**
+ * 倒计时
+ * @param {Number} time  倒计时秒数
+ * @param {Function} tickFunc  每秒回调
+ * @param {Function} done     结束后回调
+ */
 const countDown = (time: number, tickFunc: (time: number) => void, done: () => void) => {
   const tick = () => {
     setTimeout(() => {
@@ -72,10 +65,7 @@ const getCode = async () => {
     showToast("请输入正确的手机号");
     return;
   }
-  showLoadingToast({
-    message: "正在发送...",
-    forbidClick: true,
-  });
+  openLoading("正在发送...");
   await getVerifyCode(props.phone);
   closeToast();
   sendcCode();
