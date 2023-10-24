@@ -23,7 +23,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import createCode from './random-code';
+import createCode from './create-code';
 import { changeRem, formatStyle } from '@/utils/format/unit';
 import { TypesRandomCode } from '../WgTypes';
 
@@ -44,3 +44,4 @@ onMounted(async () => {
   getCode();
 });
 </script>
+./create-code
