@@ -30,7 +30,7 @@
 <script lang="ts" setup>
 import { changeRem, formatStyle } from "@/utils/format/unit";
 import { TypesPhone } from "./WgTypes";
-import ValidateCodeBtn from '@/ValidateCodeBtn/index.vue'
+import ValidateCodeBtn from '@/components/ValidateCodeBtn/index.vue'
 // import { useWgFormList } from "@/composition/use-wgform";
 
 const props = defineProps<{
