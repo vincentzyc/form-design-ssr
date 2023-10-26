@@ -12,7 +12,7 @@ import WgSplitLine from './WgSplitLine.vue';
 import WgStaticText from './WgStaticText.vue';
 import WgCountDown from './WgCountDown.vue';
 import WgButton from './WgButton.vue';
-// import WgPhone from "./WgPhone.vue";
+import WgPhone from "./WgPhone.vue";
 import WgRandomCode from "./WgRandomCode/index.vue";
 import WgInput from './WgInput.vue';
 import WgSwitch from "./WgSwitch.vue";
@@ -30,7 +30,7 @@ export default defineComponent({
     WgStaticText,
     WgCountDown,
     WgButton,
-    // WgPhone,
+    WgPhone,
     WgRandomCode,
     WgInput,
     WgSwitch,
