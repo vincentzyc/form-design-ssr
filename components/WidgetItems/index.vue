@@ -20,6 +20,7 @@ import WgSelect from "./WgSelect.vue";
 import WgAgreement from "./WgAgreement/index.vue";
 import WgImgSlide from './WgImgSlide.vue';
 import WgDatePicker from "./WgDatePicker.vue";
+import WgVideoPlay from "./WgVideoPlay.vue";
 
 export default defineComponent({
   name: 'WidgetItems',
@@ -37,7 +38,8 @@ export default defineComponent({
     WgSelect,
     WgAgreement,
     WgImgSlide,
-    WgDatePicker
+    WgDatePicker,
+    WgVideoPlay
   },
 });
 </script>
