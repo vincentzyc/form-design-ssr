@@ -1,5 +1,5 @@
 <template>
-  <div :class="wgViewClass.value" :style="wgViewStyle.value">
+  <div :class="wgViewClass" :style="wgViewStyle.value">
     <component :is="'Wg' + props.item.type" :item="props.item" :parentsWg="props.parentsWg" />
   </div>
 </template>

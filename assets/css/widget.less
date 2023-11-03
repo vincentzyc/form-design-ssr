@@ -38,6 +38,12 @@
       }
     }
   }
+  .widget-view:not(:last-child) .wg-item {
+    border-bottom: 1px solid #ddd;
+  }
+  .widget-view .wg-item:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+  }
 
   .wg-item {
     display: flex;
@@ -59,7 +65,6 @@
     color: #666;
     font-size: 14px;
     border-radius: 4px;
-    border: 1px solid #ddd;
     outline: none;
     text-indent: 10px;
     transition: 0.3s;
