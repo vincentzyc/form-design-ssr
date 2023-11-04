@@ -39,7 +39,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { onMounted } from "vue";
+import { onMounted,ref,computed } from "vue";
 interface Props {
   isPassing: boolean;
   disabled?: boolean;
@@ -80,33 +80,32 @@ const emit = defineEmits<{
   (e: "passcallback"): void;
 }>();
 
-const dragVerify = $ref<HTMLDivElement>();
-const progressBar = $ref<HTMLDivElement>();
-const handler = $ref<HTMLDivElement>();
-const refMessage = $ref<HTMLDivElement>();
+const dragVerify = ref<HTMLDivElement>();
+const progressBar = ref<HTMLDivElement>();
+const handler = ref<HTMLDivElement>();
+const refMessage = ref<HTMLDivElement>();
 
-let isMoving = $ref(false);
-let x = $ref(0);
-let isOk = $ref(false);
+let isMoving = ref(false);
+let x = ref(0);
+let isOk = ref(false);
 
 onMounted(() => {
-  const dragEl = dragVerify;
-  if (dragEl) {
-    dragEl.style.setProperty("--textColor", props.textColor);
-    dragEl.style.setProperty("--width", Math.floor(props.width / 2) + "px");
-    dragEl.style.setProperty("--pwidth", -Math.floor(props.width / 2) + "px");
+  if (dragVerify.value) {
+    dragVerify.value.style.setProperty("--textColor", props.textColor);
+    dragVerify.value.style.setProperty("--width", Math.floor(props.width / 2) + "px");
+    dragVerify.value.style.setProperty("--pwidth", -Math.floor(props.width / 2) + "px");
   }
 });
 
-const handlerStyle = $computed(() => ({
+const handlerStyle = computed(() => ({
   width: props.height + "px",
   height: props.height + "px",
   background: props.handlerBg,
 }));
 
-const message = $computed(() => (props.isPassing ? props.successText : props.text));
+const message = computed(() => (props.isPassing ? props.successText : props.text));
 
-const dragVerifyStyle = $computed(() => ({
+const dragVerifyStyle = computed(() => ({
   width: props.width + "px",
   height: props.height + "px",
   lineHeight: props.height + "px",
@@ -114,13 +113,13 @@ const dragVerifyStyle = $computed(() => ({
   borderRadius: props.circle ? props.height / 2 + "px" : props.radius,
 }));
 
-const progressBarStyle = $computed(() => ({
+const progressBarStyle = computed(() => ({
   background: props.progressBarBg,
   height: props.height + "px",
   borderRadius: props.circle ? props.height / 2 + "px 0 0 " + props.height / 2 + "px" : props.radius,
 }));
 
-const textStyle = $computed(() => ({
+const textStyle = computed(() => ({
   height: props.height + "px",
   width: props.width + "px",
   fontSize: props.textSize,
@@ -130,61 +129,61 @@ function dragStart(e: MouseEvent | TouchEvent) {
   if (props.disabled) return;
   e.preventDefault();
   if (!props.isPassing) {
-    isMoving = true;
-    x = "pageX" in e ? e.pageX : e.touches[0].pageX;
+    isMoving.value = true;
+    x.value= "pageX" in e ? e.pageX : e.touches[0].pageX;
   }
   emit("handlerMove");
 }
 function dragMoving(e: MouseEvent | TouchEvent) {
-  if (isMoving && !props.isPassing) {
+  if (isMoving.value && !props.isPassing) {
     var _x = "pageX" in e ? e.pageX : e.touches[0].pageX - x;
     if (_x > 0 && _x <= props.width - props.height) {
-      if (handler) handler.style.left = _x + "px";
-      if (progressBar) progressBar.style.width = _x + props.height / 2 + "px";
+      if (handler.value) handler.value.style.left = _x + "px";
+      if (progressBar.value) progressBar.value.style.width = _x + props.height / 2 + "px";
     } else if (_x > props.width - props.height) {
-      if (handler) handler.style.left = props.width - props.height + "px";
-      if (progressBar) progressBar.style.width = props.width - props.height / 2 + "px";
+      if (handler.value) handler.value.style.left = props.width - props.height + "px";
+      if (progressBar.value) progressBar.value.style.width = props.width - props.height / 2 + "px";
       passVerify();
     }
   }
 }
 function dragFinish(e: MouseEvent | TouchEvent) {
-  if (isMoving && !props.isPassing) {
+  if (isMoving.value && !props.isPassing) {
     var _x = "pageX" in e ? e.pageX : e.changedTouches[0].pageX - x;
     if (_x < props.width - props.height) {
-      isOk = true;
+      isOk.value = true;
       setTimeout(() => {
-        if (handler) handler.style.left = "0";
-        if (progressBar) progressBar.style.width = "0";
-        isOk = false;
+        if (handler.value) handler.value.style.left = "0";
+        if (progressBar.value) progressBar.value.style.width = "0";
+        isOk.value = false;
       }, 500);
       emit("passfail");
     } else {
-      if (handler) handler.style.left = props.width - props.height + "px";
-      if (progressBar) progressBar.style.width = props.width - props.height / 2 + "px";
+      if (handler.value) handler.value.style.left = props.width - props.height + "px";
+      if (progressBar.value) progressBar.value.style.width = props.width - props.height / 2 + "px";
       passVerify();
     }
-    isMoving = false;
+    isMoving.value = false;
   }
 }
 function passVerify() {
   emit("update:isPassing", true);
-  isMoving = false;
-  if (progressBar) progressBar.style.background = props.completedBg;
-  if (refMessage) refMessage.style.webkitTextFillColor = "unset";
-  if (refMessage) refMessage.style.animation = "slidetounlock2 2s infinite";
-  if (refMessage) refMessage.style.color = "#fff";
+  isMoving.value = false;
+  if (progressBar.value) progressBar.value.style.background = props.completedBg;
+  if (refMessage.value) refMessage.value.style.webkitTextFillColor = "unset";
+  if (refMessage.value) refMessage.value.style.animation = "slidetounlock2 2s infinite";
+  if (refMessage.value) refMessage.value.style.color = "#fff";
   emit("passcallback");
 }
 function reset() {
-  isMoving = false;
-  x = 0;
-  isOk = false;
-  if (handler) handler.style.left = "0";
-  if (progressBar) progressBar.style.width = "0";
-  if (refMessage) refMessage.style.webkitTextFillColor = "transparent";
-  if (refMessage) refMessage.style.animation = "slidetounlock 3s infinite";
-  if (refMessage) refMessage.style.color = props.background;
+  isMoving.value = false;
+  x.value = 0;
+  isOk.value = false;
+  if (handler.value) handler.value.style.left = "0";
+  if (progressBar.value) progressBar.value.style.width = "0";
+  if (refMessage.value) refMessage.value.style.webkitTextFillColor = "transparent";
+  if (refMessage.value) refMessage.value.style.animation = "slidetounlock 3s infinite";
+  if (refMessage.value) refMessage.value.style.color = props.background;
 }
 defineExpose({ reset });
 </script>
