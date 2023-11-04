@@ -136,7 +136,7 @@ function dragStart(e: MouseEvent | TouchEvent) {
 }
 function dragMoving(e: MouseEvent | TouchEvent) {
   if (isMoving.value && !props.isPassing) {
-    var _x = "pageX" in e ? e.pageX : e.touches[0].pageX - x;
+    var _x = "pageX" in e ? e.pageX : e.touches[0].pageX - x.value;
     if (_x > 0 && _x <= props.width - props.height) {
       if (handler.value) handler.value.style.left = _x + "px";
       if (progressBar.value) progressBar.value.style.width = _x + props.height / 2 + "px";
@@ -149,7 +149,7 @@ function dragMoving(e: MouseEvent | TouchEvent) {
 }
 function dragFinish(e: MouseEvent | TouchEvent) {
   if (isMoving.value && !props.isPassing) {
-    var _x = "pageX" in e ? e.pageX : e.changedTouches[0].pageX - x;
+    var _x = "pageX" in e ? e.pageX : e.changedTouches[0].pageX - x.value;
     if (_x < props.width - props.height) {
       isOk.value = true;
       setTimeout(() => {
