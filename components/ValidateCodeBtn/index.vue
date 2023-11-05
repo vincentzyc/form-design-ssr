@@ -3,8 +3,9 @@
 </template>
 
 <script lang="ts" setup>
-import "./style.css";
 import { showToast, closeToast } from "vant";
+import { openLoading } from "~/utils/loading";
+import "./style.css";
 
 const props = defineProps<{
   phone: string;
