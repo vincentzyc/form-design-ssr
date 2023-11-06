@@ -22,6 +22,7 @@ import WgImgSlide from './WgImgSlide.vue';
 import WgDatePicker from "./WgDatePicker.vue";
 import WgVideoPlay from "./WgVideoPlay.vue";
 import WgWechat from "./WgWechat.tsx";
+import WgMarquee from "./WgMarquee.tsx";
 
 export default defineComponent({
   name: 'WidgetItems',
@@ -41,7 +42,8 @@ export default defineComponent({
     WgImgSlide,
     WgDatePicker,
     WgVideoPlay,
-    WgWechat
+    WgWechat,
+    WgMarquee
   },
 });
 </script>
