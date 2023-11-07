@@ -16,7 +16,7 @@ export default defineComponent({
     const wrapClass = ['wg-marquee', { 'flex align-middle': props.item.direction === 'left' }];
 
     const imgStyle = computed(() => ({
-      width: marqueeWidth.value + 'px',
+      width: marqueeWidth.value ? marqueeWidth.value + 'px' : '100%',
       height: props.item.direction === 'left' ? changeRem(props.item.style.height) : 'auto',
     }));
 
@@ -42,7 +42,11 @@ export default defineComponent({
       return (
         <div class={inlineClass.value} style={inlineStyle.value}>
           {[...props.item.textList, ...props.item.textList].map((texts, key) => (
-            <p key={key} class="flex space-around" style={{ width: marqueeWidth.value + 'px' }}>
+            <p
+              key={key}
+              class="flex space-around"
+              style={{ width: marqueeWidth.value ? marqueeWidth.value + 'px' : '100%' }}
+            >
               {texts.split(/\s+/).map((text: string, i: number) => (
                 <span key={i}>{text}</span>
               ))}
