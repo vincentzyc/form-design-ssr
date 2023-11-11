@@ -23,6 +23,7 @@ import WgDatePicker from "./WgDatePicker.vue";
 import WgVideoPlay from "./WgVideoPlay.vue";
 import WgWechat from "./WgWechat.tsx";
 import WgMarquee from "./WgMarquee.tsx";
+import WgHPicker from "./HPicker/index.tsx";
 
 export default defineComponent({
   name: 'WidgetItems',
@@ -43,7 +44,8 @@ export default defineComponent({
     WgDatePicker,
     WgVideoPlay,
     WgWechat,
-    WgMarquee
+    WgMarquee,
+    WgHPicker
   },
 });
 </script>
