@@ -1,29 +1,28 @@
-import { changeRem, formatStyle } from "@/utils/format/unit";
-import { defineComponent, nextTick, onBeforeUnmount, onMounted, ref, PropType } from "vue";
-import { TypesMarqueeSingle } from "../WgTypes";
+import { changeRem, formatStyle } from '@/utils/format/unit';
+import { defineComponent, nextTick, onBeforeUnmount, onMounted, ref, PropType } from 'vue';
+import { TypesMarqueeSingle } from '../WgTypes';
 
 export default defineComponent({
   props: {
     item: {
       type: Object as PropType<TypesMarqueeSingle>,
-      required: true
-    }
+      required: true,
+    },
   },
   setup(props) {
-    const animate = ref(false),
-      animateTimeId = ref(0),
-      scrollTimeId = ref(0)
+    let animateTimeId: NodeJS.Timeout, scrollTimeId: NodeJS.Timeout;
+    const animate = ref(false);
 
-    const scrollList = ref<typeof props.item.textList>([])
+    const scrollList = ref<typeof props.item.textList>([]);
 
     const getScroll = () => {
-      const scrollStyle = formatStyle({ ...props.item.style, borderRadius: props.item.style.height })
+      const scrollStyle = formatStyle({ ...props.item.style, borderRadius: props.item.style.height });
       return (
         <ul class="scroll-wrapper" style={scrollStyle}>
           {scrollList.value.map((text, i: number) => (
             <li
               key={i}
-              class={['flex', 'align-middle', 'scroll-item', { 'anim': animate.value && i === 0 }]}
+              class={['flex', 'align-middle', 'scroll-item', { anim: animate.value && i === 0 }]}
               style={{ marginTop: animate.value && i === 0 ? `-${changeRem(props.item.style.height)}` : '' }}
             >
               <span
@@ -34,36 +33,32 @@ export default defineComponent({
             </li>
           ))}
         </ul>
-      )
-    }
+      );
+    };
     const scroll = () => {
       if (animate.value) return;
-      clearTimeout(animateTimeId.value);
+      clearTimeout(animateTimeId);
       animate.value = true;
-      animateTimeId.value = setTimeout(() => {
+      animateTimeId = setTimeout(() => {
         scrollList.value.push(scrollList.value[0]);
         scrollList.value.shift();
         animate.value = false;
       }, 500);
-    }
+    };
 
     onBeforeUnmount(() => {
-      clearInterval(scrollTimeId.value);
-      clearTimeout(animateTimeId.value);
-    })
+      clearInterval(scrollTimeId);
+      clearTimeout(animateTimeId);
+    });
 
     onMounted(async () => {
-      await nextTick()
+      await nextTick();
       setTimeout(() => {
-        scrollList.value = props.item.textList
-        scrollTimeId.value = setInterval(scroll, props.item.durationTime * 1000);
+        scrollList.value = props.item.textList;
+        scrollTimeId = setInterval(scroll, props.item.durationTime * 1000);
       }, 10);
-    })
+    });
 
-    return () => (
-      <div class="wg-marquee-single flex flex-center">
-        {getScroll()}
-      </div>
-    )
-  }
-})
+    return () => <div class="wg-marquee-single flex flex-center">{getScroll()}</div>;
+  },
+});
