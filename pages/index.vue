@@ -5,21 +5,21 @@
 </template>
 
 <script setup lang="ts">
-// import widgetsData from "@/data/pgdata";
 import { formatStyle } from '@/utils/format/unit';
 import RenderPage from '@/components/RenderPage.vue';
 
 let widgetsData = ref<Record<string, any> | null>(null);
 let wgList = ref<Record<string, any>[]>([]);
 
-// async function lazy(time=100) {
-//   return new Promise(resolve => {
-//     setTimeout(() => {
-//       resolve(true);
-//     }, time);
-//   });
-// }
+async function lazy(time=100) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(true);
+    }, time);
+  });
+}
 
+// await lazy(3000);
 const PageData = await import('@/data/pgdata');
 
 function initHead(){
@@ -37,7 +37,6 @@ function initHead(){
 }
 
 async function initPageData(pgdata: Record<string, any>) {
-  // await lazy(3000);
   if (pgdata) widgetsData.value = pgdata.default || pgdata;
   if (widgetsData.value) {
     wgList.value = widgetsData.value.list;
