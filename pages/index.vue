@@ -19,7 +19,8 @@ async function lazy(time=100) {
   });
 }
 
-// await lazy(3000);
+ // 模拟接口请求
+await lazy(300);
 const PageData = await import('@/data/pgdata');
 
 function initHead(){
