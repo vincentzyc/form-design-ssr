@@ -20,7 +20,7 @@ let wgList = ref<Record<string, any>[]>([]);
 //   });
 // }
 
-function getPageData() {
+function getPageData(): Promise<Record<string, any>> {
   return new Promise(resolve => {
     setTimeout(() => {
       resolve(pgdata);
