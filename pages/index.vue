@@ -8,6 +8,9 @@
 import { formatStyle } from '@/utils/format/unit';
 import RenderPage from '@/components/RenderPage.vue';
 import pgdata from '@/data/pgdata';
+import { useMainStore } from '@/pinia';
+
+const mainStore = useMainStore();
 
 let widgetsData = ref<Record<string, any> | null>(null);
 let wgList = ref<Record<string, any>[]>([]);
@@ -24,11 +27,12 @@ function getPageData(): Promise<Record<string, any>> {
   return new Promise(resolve => {
     setTimeout(() => {
       resolve(pgdata);
-    }, 1000);
+    }, 300);
   });
 }
 // 模拟接口请求
 const PageData = await getPageData();
+mainStore.setPageData(PageData);
 
 function initHead() {
   useHead({
