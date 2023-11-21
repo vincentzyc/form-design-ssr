@@ -40,8 +40,8 @@ const getCode = () => {
 const directionClass = props.item.label.labelPosition === 'top' ? 'flex-column' : 'align-middle';
 
 onMounted(async () => {
+  props.item.getCode = getCode;
   await nextTick();
   getCode();
 });
 </script>
-./create-code
