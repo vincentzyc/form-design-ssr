@@ -1,5 +1,6 @@
-// import { valiWgValue } from './validate/index';
 import { openLoading, closeLoading } from '@/utils/loading';
+import { useMainStore } from '@/pinia';
+import { valiAllDate } from './validate';
 
 interface TypeSubmitAgrs {
   // formData: Record<string, any>;
@@ -7,18 +8,17 @@ interface TypeSubmitAgrs {
   wgItem: Record<string, any>;
 }
 
-// export function handleSubmit(obj: TypeSubmitAgrs) {
 export function handleSubmit(obj: TypeSubmitAgrs) {
-  // const { formData, wgForms } = obj;
   const { wgItem } = obj;
-  // const valiDateRes = valiWgValue(formData, wgForms);
-  // if (valiDateRes !== true && valiDateRes !== false) return showToast(valiDateRes);
-  // submit(formData);
-  submit(wgItem);
+  const mainStore = useMainStore();
+  const valiDateRes = valiAllDate(mainStore.pageData?.list, {});
+  if (typeof valiDateRes === 'string') return showToast(valiDateRes);
+  submit(valiDateRes, wgItem);
 }
 
-export function submit(data: Record<string, any>) {
+export function submit(data: Record<string, any>, wgItem: Record<string, any>) {
   console.log('提交数据', data);
+  console.log('组件数据', wgItem);
   openLoading('正在提交...');
   setTimeout(() => {
     closeLoading();
