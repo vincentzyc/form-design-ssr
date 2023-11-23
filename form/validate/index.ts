@@ -1,4 +1,5 @@
 import { scrollIntoView } from '@/utils/dom';
+import { hasProperty } from '~/utils/validate/dataType';
 
 interface TypeRuleList {
   [key: string]: (...args: any[]) => true | string;
@@ -139,7 +140,7 @@ export function valiAllDate(
   return formData;
 }
 function formatParam(item: Record<string, any>, formData: Record<string, any>) {
-  if (!Object.prototype.hasOwnProperty.call(item, 'apiKey')) return;
+  if (!hasProperty(item, 'apiKey')) return;
   if (item.type === 'phone' && item.showCode) {
     formData[item.codeKey] = item.codeValue;
   }
@@ -148,8 +149,8 @@ function formatParam(item: Record<string, any>, formData: Record<string, any>) {
 
 export function valiWgValue(formData: Record<string, any>, wgForms: Record<string, any>[], isScrollIntoView = true) {
   for (const wg of wgForms) {
-    if (Object.prototype.hasOwnProperty.call(formData, wg.apiKey)) wg.value = formData[wg.apiKey];
-    if (Object.prototype.hasOwnProperty.call(formData, wg.codeKey)) wg.codeValue = formData[wg.codeKey];
+    if (hasProperty(formData, wg.apiKey)) wg.value = formData[wg.apiKey];
+    if (hasProperty(formData, wg.codeKey)) wg.codeValue = formData[wg.codeKey];
     const res = valiDate(wg);
     if (res === true) {
       continue;
