@@ -4,7 +4,7 @@
  * @return "String","Object","Array"...
  */
 export function getType(value: unknown): string {
-  return Object.prototype.toString.call(value).slice(8, -1)
+  return Object.prototype.toString.call(value).slice(8, -1);
 }
 
 export function isObject(val: unknown): val is Record<any, any> {
@@ -21,4 +21,7 @@ export function isString(val: unknown): boolean {
 
 export function isBoolean(val: unknown): boolean {
   return Object.prototype.toString.call(val).slice(8, -1) === 'Boolean';
+}
+export function hasProperty(obj: Record<PropertyKey, any>, key: PropertyKey) {
+  return Object.prototype.hasOwnProperty.call(obj, key);
 }
