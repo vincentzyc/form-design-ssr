@@ -1,4 +1,4 @@
-import { getType } from "../validate/dataType";
+import { getType, hasProperty } from "../validate/dataType";
 
 /**
  * px转rem
@@ -18,7 +18,7 @@ export function changeRem(str: string = ""): string {
  */
 export function formatStyle(obj: Record<string, any>): Record<string, any> {
   for (const key in obj) {
-    if (Object.prototype.hasOwnProperty.call(obj, key) && getType(obj[key]) === 'String') {
+    if (hasProperty(obj, key) && getType(obj[key]) === 'String') {
       if (obj[key].includes('px')) obj[key] = changeRem(obj[key])
     }
   }
