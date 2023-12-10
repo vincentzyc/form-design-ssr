@@ -34,7 +34,7 @@ function getPageData(): Promise<Record<string, any>> {
 const PageData = await getPageData();
 mainStore.setPageData(PageData);
 
-await lazy(2000);
+await lazy(1000);
 
 function initHead(){
   useHead({
