@@ -3,8 +3,6 @@ import { useMainStore } from '@/pinia';
 import { valiAllDate } from './validate';
 
 interface TypeSubmitAgrs {
-  // formData: Record<string, any>;
-  // wgForms: Record<string, any>[];
   wgItem: Record<string, any>;
 }
 
