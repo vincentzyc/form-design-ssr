@@ -1,4 +1,5 @@
 import { scrollIntoView } from '@/utils/dom';
+import { Phone } from '~/assets/js/wg-types';
 import { hasProperty } from '~/utils/validate/dataType';
 
 interface TypeRuleList {
@@ -106,7 +107,7 @@ export function valiDate(obj: Record<string, any>): true | string {
   if (typeof obj.isRequired !== 'boolean') obj.isRequired = true; //默认必填
   if (obj.isRequired && obj.value === '') return obj.placeholder || '请完善信息';
   if (!ruleList[obj.apiKey]) return true;
-  if (obj.apiKey === 'phone') {
+  if (obj.apiKey === Phone) {
     if (ruleList[obj.apiKey](obj.value) === true) {
       return obj.showCode ? ruleList[obj.codeKey](obj.codeValue) : true;
     }
@@ -141,7 +142,7 @@ export function valiAllDate(
 }
 function formatParam(item: Record<string, any>, formData: Record<string, any>) {
   if (!hasProperty(item, 'apiKey')) return;
-  if (item.type === 'phone' && item.showCode) {
+  if (item.type === Phone && item.showCode) {
     formData[item.codeKey] = item.codeValue;
   }
   formData[item.apiKey] = item.value;
