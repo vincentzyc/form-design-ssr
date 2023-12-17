@@ -21,7 +21,6 @@
 <script lang="ts" setup>
 import { formatStyle } from "@/utils/format/unit";
 import AgreementPopup from "./AgreementPopup.vue";
-// import { useWgFormList } from "@/composition/use-wgform";
 import { TypesAgreement } from "../WgTypes";
 
 const props = defineProps<{
@@ -29,8 +28,6 @@ const props = defineProps<{
 }>();
 
 const elAgreement = ref<typeof AgreementPopup>();
-// const wgFormList = useWgFormList();
-// const { wgData, formData } = wgFormList.useAddForm(props.item);
 
 const openAgreement = (text: string, event: MouseEvent) => {
   event.stopPropagation();
