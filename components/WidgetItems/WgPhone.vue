@@ -31,15 +31,10 @@
 import { changeRem, formatStyle } from "@/utils/format/unit";
 import { TypesPhone } from "./WgTypes";
 import ValidateCodeBtn from '@/components/ValidateCodeBtn/index.vue'
-// import { useWgFormList } from "@/composition/use-wgform";
 
 const props = defineProps<{
   item: TypesPhone;
 }>();
-
-// const wgFormList = useWgFormList()
-
-// const { wgData, formData } = wgFormList.useAddForm(props.item)
 
 const phoneClass = ["wg-item", props.item.label.labelPosition === "top" ? "flex-column" : "align-middle"];
 
