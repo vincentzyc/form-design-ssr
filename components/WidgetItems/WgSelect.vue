@@ -21,14 +21,11 @@
 <script lang="ts" setup>
 import { PickerConfirmEventParams } from 'vant';
 import { changeRem } from '@/utils/format/unit';
-// import { useWgFormList } from "@/composition/use-wgform";
 import { TypesSelect } from './WgTypes';
 
 const props = defineProps<{
   item: TypesSelect;
 }>();
-// const wgFormList = useWgFormList();
-// const { wgData, formData } = wgFormList.useAddForm(props.item);
 let showPicker = ref(false);
 const wrapClass = ['wg-item', props.item.label.labelPosition === 'top' ? 'flex-column' : 'align-middle'];
 
