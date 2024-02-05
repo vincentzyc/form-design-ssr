@@ -7,36 +7,30 @@
 <script setup lang="ts">
 import { formatStyle } from '@/utils/format/unit';
 import RenderPage from '@/components/RenderPage.vue';
-import pgdata from '@/data/pgdata';
 import { useMainStore } from '@/pinia';
+
+const { data }: { data: Record<string, any> | null } = await useFetch('/api/hello');
+const PageData = data.value;
 
 const mainStore = useMainStore();
 
 let widgetsData = ref<Record<string, any> | null>(null);
 let wgList = ref<Record<string, any>[]>([]);
 
-async function lazy(time=100) {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve(true);
-    }, time);
-  });
-}
+// async function lazy(time = 100) {
+//   return new Promise(resolve => {
+//     setTimeout(() => {
+//       resolve(true);
+//     }, time);
+//   });
+// }
+// 模拟延迟渲染
+// await lazy(1000);
 
-function getPageData(): Promise<Record<string, any>> {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve(pgdata);
-    }, 300);
-  });
-}
-// 模拟接口请求
-const PageData = await getPageData();
 mainStore.setPageData(PageData);
 
-await lazy(1000);
 
-function initHead(){
+function initHead() {
   useHead({
     title: widgetsData.value?.title,
     htmlAttrs: {
