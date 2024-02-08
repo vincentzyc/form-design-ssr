@@ -1,11 +1,11 @@
 <template>
-  <VanPopup v-model:show="showAgreement" class="agreement-popup" style="max-width: 576px">
+  <LazyVanPopup v-model:show="showAgreement" class="agreement-popup" style="max-width: 576px">
     <div class="agreement-wrap">
       <iframe v-if="isLink(showText)" :src="showText" frameborder="0" style="width: 100%; height: 100%"></iframe>
       <p v-else class="agreement-text" v-html="textBr(showText)"></p>
     </div>
     <div class="agreement-confirm" @click="close">我知道了</div>
-  </VanPopup>
+  </LazyVanPopup>
 </template>
 
 <script lang="ts" setup>
