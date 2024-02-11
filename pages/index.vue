@@ -9,7 +9,12 @@ import { formatStyle } from '@/utils/format/unit';
 import RenderPage from '@/components/RenderPage.vue';
 import { useMainStore } from '@/pinia';
 
-const { data }: { data: Record<string, any> | null } = await useFetch('/api/hello');
+const urlQuery = useRoute().query;
+const pageId = urlQuery?.id;
+const pagePid = urlQuery?.pid;
+const { data }: { data: Record<string, any> | null } = await useFetch('/api/pages/' + pageId, {
+  params: { pid: pagePid },
+});
 const PageData = data.value;
 
 const mainStore = useMainStore();
@@ -28,7 +33,6 @@ let wgList = ref<Record<string, any>[]>([]);
 // await lazy(1000);
 
 mainStore.setPageData(PageData);
-
 
 function initHead() {
   useHead({
