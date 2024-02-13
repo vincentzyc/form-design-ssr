@@ -2,7 +2,7 @@
   <div :style="formatStyle(getStyle)" class="wg-countdown" v-if="!isFinished">
     <div class="flex flex-center">
       <span class="countdown-title">{{ props.item.title }}</span>
-      <VanCountDown :time="endTime" @finish="finished" class="flex-inline align-middle">
+      <LazyVanCountDown :time="endTime" @finish="finished" class="flex-inline align-middle">
         <template #default="timeData">
           <div v-if="showCountDown">
             <span :style="formatStyle(props.item.timeStyle)" class="countdown-timeblock" v-if="timeData.days > 0">{{
@@ -39,7 +39,7 @@
             <span :style="formatStyle(props.item.unitStyle)" class="countdown-colon">秒</span>
           </div>
         </template>
-      </VanCountDown>
+      </LazyVanCountDown>
     </div>
   </div>
 </template>
