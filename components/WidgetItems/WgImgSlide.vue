@@ -1,13 +1,13 @@
 <template>
   <div class="wg-imgslide">
     <div :style="props.item.style">
-      <VanSwipe :autoplay="props.item.interval" :style="slideContentStyle">
-        <VanSwipeItem v-for="v in props.item.value">
+      <LazyVanSwipe :autoplay="props.item.interval" :style="slideContentStyle">
+        <LazyVanSwipeItem v-for="v in props.item.value">
           <a :href="v.url">
             <img :src="v.image" :style="{ width: '100%', height: '100%' }" />
           </a>
-        </VanSwipeItem>
-      </VanSwipe>
+        </LazyVanSwipeItem>
+      </LazyVanSwipe>
     </div>
   </div>
 </template>
