@@ -14,8 +14,8 @@
         />
       </div>
     </div>
-    <VanPopup position="bottom" v-model:show="showPicker">
-      <VanDatePicker
+    <LazyVanPopup position="bottom" v-model:show="showPicker">
+      <LazyVanDatePicker
         v-model="currentDate"
         type="date"
         title="选择年月日"
@@ -24,7 +24,7 @@
         @cancel="cancel"
         @confirm="confirm"
       />
-    </VanPopup>
+    </LazyVanPopup>
   </div>
 </template>
 
