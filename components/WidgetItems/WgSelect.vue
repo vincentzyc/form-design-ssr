@@ -12,9 +12,9 @@
         class="wg-input"
       />
     </div>
-    <VanPopup v-model:show="showPicker" round position="bottom">
+    <LazyVanPopup v-model:show="showPicker" round position="bottom">
       <VanPicker show-toolbar :columns="props.item.options" @cancel="closePicker" @confirm="onConfirm" />
-    </VanPopup>
+    </LazyVanPopup>
   </div>
 </template>
 
