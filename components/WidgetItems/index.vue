@@ -12,18 +12,18 @@ import WgSplitLine from './WgSplitLine.vue';
 import WgStaticText from './WgStaticText.vue';
 import WgCountDown from './WgCountDown.vue';
 import WgButton from './WgButton.vue';
-import WgPhone from "./WgPhone.vue";
-import WgRandomCode from "./WgRandomCode/index.vue";
+import WgPhone from './WgPhone.vue';
+import WgRandomCode from './WgRandomCode/index.vue';
 import WgInput from './WgInput.vue';
-import WgSwitch from "./WgSwitch.vue";
-import WgSelect from "./WgSelect.vue";
-import WgAgreement from "./WgAgreement/index.vue";
+import WgSwitch from './WgSwitch.vue';
+import WgSelect from './WgSelect.vue';
+import WgAgreement from './WgAgreement/index.vue';
 import WgImgSlide from './WgImgSlide.vue';
-import WgDatePicker from "./WgDatePicker.vue";
-import WgVideoPlay from "./WgVideoPlay.vue";
-import WgWechat from "./WgWechat.tsx";
-import WgMarquee from "./WgMarquee.tsx";
-import WgMarqueeSingle from "./WgMarqueeSingle/index.tsx";
+import WgDatePicker from './WgDatePicker.vue';
+import WgVideoPlay from './WgVideoPlay.vue';
+import WgWechat from './WgWechat.tsx';
+import WgMarquee from './WgMarquee.tsx';
+import WgMarqueeSingle from './WgMarqueeSingle/index.tsx';
 import WgHPicker from "./HPicker/index.tsx";
 
 export default defineComponent({
@@ -47,7 +47,7 @@ export default defineComponent({
     WgWechat,
     WgMarquee,
     WgHPicker,
-    WgMarqueeSingle
+    WgMarqueeSingle,
   },
 });
 </script>
